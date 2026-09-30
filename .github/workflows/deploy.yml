@@ -1,0 +1,59 @@
+name: Deploy Wolof PWA
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Reconstruct and verify PWA
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import base64, hashlib
+          parts = [Path(f".deploy/wolof-app.part0{i}").read_text(encoding="ascii").strip() for i in range(6)]
+          raw = base64.b64decode("".join(parts), validate=True)
+          expected = "9c465b2755198f4dce661319a34cba8efc9606fb87af89e28152e43330f3fcba"
+          actual = hashlib.sha256(raw).hexdigest()
+          if actual != expected:
+              raise SystemExit(f"SHA256 mismatch: {actual}")
+          Path("/tmp/wolof-app.zip").write_bytes(raw)
+          PY
+          rm -rf site
+          mkdir site
+          unzip -tq /tmp/wolof-app.zip
+          unzip -q /tmp/wolof-app.zip -d site
+          test -f site/index.html
+          test -f site/service-worker.js
+          test -f site/manifest.webmanifest
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
