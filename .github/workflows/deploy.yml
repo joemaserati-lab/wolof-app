@@ -28,7 +28,7 @@ jobs:
           import base64, hashlib
           parts = [Path(f".deploy/wolof-app.part0{i}").read_text(encoding="ascii").strip() for i in range(6)]
           raw = base64.b64decode("".join(parts), validate=True)
-          expected = "9c465b2755198f4dce661319a34cba8efc9606fb87af89e28152e43330f3fcba"
+          expected = "65c55dc8383fc4b76b07ccd449709d3094e87988340017261b2381e88aee0ea1"
           actual = hashlib.sha256(raw).hexdigest()
           if actual != expected:
               raise SystemExit(f"SHA256 mismatch: {actual}")
