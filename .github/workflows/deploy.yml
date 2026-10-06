@@ -37,7 +37,7 @@ jobs:
           unzip -tq /tmp/wolof-app.zip
           unzip -q /tmp/wolof-app.zip -d site
 
-      - name: Apply UI 3.0 and copy fixes
+      - name: Apply UI 3.1 and copy fixes
         run: |
           python3 - <<'PY'
           from pathlib import Path
@@ -47,11 +47,11 @@ jobs:
           s=p.read_text()
           for a,b in {
             "#063d2b":"#080b09",
-            "styles.css?v=22":"styles.css?v=31",
-            "data.js?v=22":"data.js?v=31",
-            "app.js?v=22":"app.js?v=31",
-            "href=\"styles.css\"":"href=\"styles.css?v=31\"",
-            "<script src=\"data.js\"></script><script src=\"app.js\"></script>":"<script src=\"data.js?v=31\"></script><script src=\"app.js?v=31\"></script>",
+            "styles.css?v=22":"styles.css?v=32",
+            "data.js?v=22":"data.js?v=32",
+            "app.js?v=22":"app.js?v=32",
+            "href=\"styles.css\"":"href=\"styles.css?v=32\"",
+            "<script src=\"data.js\"></script><script src=\"app.js\"></script>":"<script src=\"data.js?v=32\"></script><script src=\"app.js?v=32\"></script>",
             "Lessico-first · offline":"Wolof pratico · offline",
             "CORPUS V2.2":"CORPUS V2.2 · UI 3.0",
             "CORPUS V2</em>":"CORPUS V2.2 · UI 3.0</em>",
@@ -118,19 +118,52 @@ jobs:
           @media(max-width:780px){.top,.filters,.qtop{background:#080b09}.hamb{background:var(--card);color:var(--ink);border-color:var(--line);border-radius:999px}.hero{padding:28px 20px;min-height:auto}.hero h1{font-size:clamp(42px,12vw,62px)}.mobile-nav{background:rgba(5,8,6,.96);border-color:var(--line)}.mobile-nav button.active{background:#fdef42;color:#08100b}.qactions{background:linear-gradient(180deg,rgba(18,24,20,0),var(--card) 24%)}}
           EOF
 
+          cat >> site/styles.css <<'EOF'
+          /* UI 3.1: contrast audit + friendlier rounded display type */
+          :root{--title-font:ui-rounded,"SF Pro Rounded","Arial Rounded MT Bold","Avenir Next Rounded","Trebuchet MS",system-ui,sans-serif;--text-on-dark:#fffdf5;--text-on-light:#08100b;--green-light:#7ee0a5;--red-light:#ff9297}
+          .hero h1,.section-head h2,.practice-hero h2,.qcard h2,.results h2,.hero-stat strong,.stat strong,.mini-card b{
+            font-family:var(--title-font);font-weight:900;letter-spacing:-.035em;text-transform:none
+          }
+          .hero h1{font-size:clamp(50px,6vw,84px);line-height:.9}
+          .section-head h2{font-size:clamp(30px,3.8vw,50px);line-height:.98}
+          .practice-hero h2{line-height:1}.qcard h2{line-height:1.06}
+          .brand b{font-family:var(--title-font);font-weight:900;letter-spacing:-.025em;text-transform:none}
+          .word-card.learned{background:#102218!important;color:var(--text-on-dark)!important;border-color:rgba(126,224,165,.48)!important}
+          .word-card.learned .wolof,.word-card.learned .it,.word-card.learned footer{color:inherit}
+          .word-card.learned .it,.word-card.learned footer{color:#a9b8af}
+          .learn-dot,.source-card a{color:var(--green-light)!important}
+          .source-card .type{color:#ff7379}
+          .usage{background:#342f08!important;color:#fff4a6!important;border:1px solid rgba(253,239,66,.32);border-radius:999px}
+          .btn-red{background:#361316!important;color:var(--red-light)!important;border:1px solid rgba(227,27,35,.58)!important}
+          .search::placeholder,.type-answer::placeholder{color:#78857e}
+          .select option{background:#121814;color:#fffdf5}
+          .option.correct,.feedback.ok{color:#eafff1}
+          .option.wrong,.feedback.no{color:#fff0f1}
+          .qtag,.btn-yellow,.btn-dark,.nav.active,.toast,.notice-icon,.brandicon{color:var(--text-on-light)!important}
+          .hero-stat,.source-note,.mini-card,.module,.panel,.stat,.source-card,.word-card,.qcard,.practice-option,.search,.select,.type-answer,.option{color:var(--text-on-dark)}
+          .practice-option small{color:#9aa79f}
+          .module h3,.source-card h3,.prow b,.results h2{color:var(--text-on-dark)}
+          .topstats>span{color:#9aa79f}.topstats>span b{color:var(--text-on-dark)}
+          @media(max-width:780px){
+            .hero h1{font-size:clamp(40px,11vw,58px);line-height:.92}
+            .section-head h2{font-size:32px;line-height:1}
+            .qcard h2{font-size:clamp(26px,8vw,40px)}
+          }
+          EOF
+
           cat > site/service-worker.js <<'EOF'
-          const CACHE='njang-wolof-ui3-20261006b';
-          const ASSETS=['./','./index.html','./styles.css?v=31','./data.js?v=31','./app.js?v=31','./manifest.webmanifest','./icon.svg','./icon-180.png','./icon-192.png','./icon-512.png','./update.html'];
+          const CACHE='njang-wolof-ui31-20261006';
+          const ASSETS=['./','./index.html','./styles.css?v=32','./data.js?v=32','./app.js?v=32','./manifest.webmanifest','./icon.svg','./icon-180.png','./icon-192.png','./icon-512.png','./update.html'];
           self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
           self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==CACHE).map(x=>caches.delete(x)))).then(()=>self.clients.claim())));
           self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;const u=new URL(e.request.url);if(u.origin!==self.location.origin)return;e.respondWith(fetch(e.request,{cache:'no-store'}).then(r=>{if(r&&r.ok){const q=r.clone();caches.open(CACHE).then(c=>c.put(e.request,q))}return r}).catch(()=>caches.match(e.request).then(h=>h||caches.match('./index.html'))))});
           EOF
 
           cat > site/update.html <<'EOF'
-          <!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#080b09"><title>Aggiornamento Njàng Wolof</title><style>body{font-family:system-ui,-apple-system,sans-serif;max-width:44rem;margin:0 auto;padding:2rem;background:#080b09;color:#fffdf5}.card{margin-top:8vh;padding:2rem;border:1px solid #29322c;border-radius:28px;background:#121814}.star{width:58px;height:58px;display:grid;place-items:center;border-radius:18px;background:#fdef42;color:#08100b;font-size:28px}h1{font-size:clamp(38px,8vw,66px);line-height:.85;letter-spacing:-.06em;text-transform:uppercase}p{color:#9aa79f;line-height:1.6}</style><div class="card"><div class="star">★</div><h1>Aggiorno Njàng Wolof</h1><p id="s">Pulisco solo la cache dell’app. I tuoi progressi restano salvati sul dispositivo.</p></div><script>(async()=>{try{if('serviceWorker'in navigator){const r=await navigator.serviceWorker.getRegistrations();await Promise.all(r.map(x=>x.unregister()))}if('caches'in window){const k=await caches.keys();await Promise.all(k.map(x=>caches.delete(x)))}document.getElementById('s').textContent='Aggiornamento completato. Apro la nuova interfaccia…'}catch(e){}setTimeout(()=>location.replace('./?ui=31'),700)})();</script>
+          <!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#080b09"><title>Aggiornamento Njàng Wolof</title><style>body{font-family:system-ui,-apple-system,sans-serif;max-width:44rem;margin:0 auto;padding:2rem;background:#080b09;color:#fffdf5}.card{margin-top:8vh;padding:2rem;border:1px solid #29322c;border-radius:28px;background:#121814}.star{width:58px;height:58px;display:grid;place-items:center;border-radius:18px;background:#fdef42;color:#08100b;font-size:28px}h1{font-size:clamp(38px,8vw,66px);line-height:.85;letter-spacing:-.06em;text-transform:uppercase}p{color:#9aa79f;line-height:1.6}</style><div class="card"><div class="star">★</div><h1>Aggiorno Njàng Wolof</h1><p id="s">Pulisco solo la cache dell’app. I tuoi progressi restano salvati sul dispositivo.</p></div><script>(async()=>{try{if('serviceWorker'in navigator){const r=await navigator.serviceWorker.getRegistrations();await Promise.all(r.map(x=>x.unregister()))}if('caches'in window){const k=await caches.keys();await Promise.all(k.map(x=>caches.delete(x)))}document.getElementById('s').textContent='Aggiornamento completato. Apro la nuova interfaccia…'}catch(e){}setTimeout(()=>location.replace('./?ui=32'),700)})();</script>
           EOF
 
-      - name: Validate UI 3.0
+      - name: Validate UI 3.1
         run: |
           test -f site/index.html
           test -f site/app.js
@@ -145,10 +178,10 @@ jobs:
           if "njang-wolof-v2" not in app:
               raise SystemExit("Progress storage key changed unexpectedly")
           idx=Path("site/index.html").read_text()
-          for marker in ("UI 3.0","styles.css?v=31","data.js?v=31","app.js?v=31"):
+          for marker in ("UI 3.0","styles.css?v=32","data.js?v=32","app.js?v=32"):
               if marker not in idx:
                   raise SystemExit(f"Missing deployed marker: {marker}")
-          print("UI 3.0 validation passed; progress storage key preserved.")
+          print("UI 3.1 validation passed; progress storage key preserved.")
           PY
 
       - name: Upload Pages artifact
