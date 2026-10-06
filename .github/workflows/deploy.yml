@@ -12,7 +12,7 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -47,11 +47,14 @@ jobs:
           s=p.read_text()
           for a,b in {
             "#063d2b":"#080b09",
-            "styles.css?v=22":"styles.css?v=30",
-            "data.js?v=22":"data.js?v=30",
-            "app.js?v=22":"app.js?v=30",
+            "styles.css?v=22":"styles.css?v=31",
+            "data.js?v=22":"data.js?v=31",
+            "app.js?v=22":"app.js?v=31",
+            "href=\"styles.css\"":"href=\"styles.css?v=31\"",
+            "<script src=\"data.js\"></script><script src=\"app.js\"></script>":"<script src=\"data.js?v=31\"></script><script src=\"app.js?v=31\"></script>",
             "Lessico-first · offline":"Wolof pratico · offline",
             "CORPUS V2.2":"CORPUS V2.2 · UI 3.0",
+            "CORPUS V2</em>":"CORPUS V2.2 · UI 3.0</em>",
             "Wolof per situazioni reali":"Impara il Wolof, usalo davvero"
           }.items(): s=s.replace(a,b)
           p.write_text(s)
@@ -116,15 +119,15 @@ jobs:
           EOF
 
           cat > site/service-worker.js <<'EOF'
-          const CACHE='njang-wolof-ui3-20261006';
-          const ASSETS=['./','./index.html','./styles.css?v=30','./data.js?v=30','./app.js?v=30','./manifest.webmanifest','./icon.svg','./icon-180.png','./icon-192.png','./icon-512.png','./update.html'];
+          const CACHE='njang-wolof-ui3-20261006b';
+          const ASSETS=['./','./index.html','./styles.css?v=31','./data.js?v=31','./app.js?v=31','./manifest.webmanifest','./icon.svg','./icon-180.png','./icon-192.png','./icon-512.png','./update.html'];
           self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
           self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==CACHE).map(x=>caches.delete(x)))).then(()=>self.clients.claim())));
           self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;const u=new URL(e.request.url);if(u.origin!==self.location.origin)return;e.respondWith(fetch(e.request,{cache:'no-store'}).then(r=>{if(r&&r.ok){const q=r.clone();caches.open(CACHE).then(c=>c.put(e.request,q))}return r}).catch(()=>caches.match(e.request).then(h=>h||caches.match('./index.html'))))});
           EOF
 
           cat > site/update.html <<'EOF'
-          <!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#080b09"><title>Aggiornamento Njàng Wolof</title><style>body{font-family:system-ui,-apple-system,sans-serif;max-width:44rem;margin:0 auto;padding:2rem;background:#080b09;color:#fffdf5}.card{margin-top:8vh;padding:2rem;border:1px solid #29322c;border-radius:28px;background:#121814}.star{width:58px;height:58px;display:grid;place-items:center;border-radius:18px;background:#fdef42;color:#08100b;font-size:28px}h1{font-size:clamp(38px,8vw,66px);line-height:.85;letter-spacing:-.06em;text-transform:uppercase}p{color:#9aa79f;line-height:1.6}</style><div class="card"><div class="star">★</div><h1>Aggiorno Njàng Wolof</h1><p id="s">Pulisco solo la cache dell’app. I tuoi progressi restano salvati sul dispositivo.</p></div><script>(async()=>{try{if('serviceWorker'in navigator){const r=await navigator.serviceWorker.getRegistrations();await Promise.all(r.map(x=>x.unregister()))}if('caches'in window){const k=await caches.keys();await Promise.all(k.map(x=>caches.delete(x)))}document.getElementById('s').textContent='Aggiornamento completato. Apro la nuova interfaccia…'}catch(e){}setTimeout(()=>location.replace('./?ui=30'),700)})();</script>
+          <!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#080b09"><title>Aggiornamento Njàng Wolof</title><style>body{font-family:system-ui,-apple-system,sans-serif;max-width:44rem;margin:0 auto;padding:2rem;background:#080b09;color:#fffdf5}.card{margin-top:8vh;padding:2rem;border:1px solid #29322c;border-radius:28px;background:#121814}.star{width:58px;height:58px;display:grid;place-items:center;border-radius:18px;background:#fdef42;color:#08100b;font-size:28px}h1{font-size:clamp(38px,8vw,66px);line-height:.85;letter-spacing:-.06em;text-transform:uppercase}p{color:#9aa79f;line-height:1.6}</style><div class="card"><div class="star">★</div><h1>Aggiorno Njàng Wolof</h1><p id="s">Pulisco solo la cache dell’app. I tuoi progressi restano salvati sul dispositivo.</p></div><script>(async()=>{try{if('serviceWorker'in navigator){const r=await navigator.serviceWorker.getRegistrations();await Promise.all(r.map(x=>x.unregister()))}if('caches'in window){const k=await caches.keys();await Promise.all(k.map(x=>caches.delete(x)))}document.getElementById('s').textContent='Aggiornamento completato. Apro la nuova interfaccia…'}catch(e){}setTimeout(()=>location.replace('./?ui=31'),700)})();</script>
           EOF
 
       - name: Validate UI 3.0
@@ -141,6 +144,10 @@ jobs:
           app=Path("site/app.js").read_text()
           if "njang-wolof-v2" not in app:
               raise SystemExit("Progress storage key changed unexpectedly")
+          idx=Path("site/index.html").read_text()
+          for marker in ("UI 3.0","styles.css?v=31","data.js?v=31","app.js?v=31"):
+              if marker not in idx:
+                  raise SystemExit(f"Missing deployed marker: {marker}")
           print("UI 3.0 validation passed; progress storage key preserved.")
           PY
 
