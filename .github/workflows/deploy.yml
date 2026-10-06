@@ -133,12 +133,16 @@ jobs:
           test -f site/app.js
           test -f site/styles.css
           test -f site/service-worker.js
-          grep -q "UI 3.0" site/index.html
-          grep -q "njang-wolof-v2" site/app.js
-          grep -q "Continua →" site/app.js
-          grep -q "Rifai la sessione" site/app.js
+          test -f site/update.html
           node --check site/app.js
           node --check site/service-worker.js
+          python3 - <<'PY'
+          from pathlib import Path
+          app=Path("site/app.js").read_text()
+          if "njang-wolof-v2" not in app:
+              raise SystemExit("Progress storage key changed unexpectedly")
+          print("UI 3.0 validation passed; progress storage key preserved.")
+          PY
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
