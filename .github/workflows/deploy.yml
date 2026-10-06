@@ -37,7 +37,7 @@ jobs:
           unzip -tq /tmp/wolof-app.zip
           unzip -q /tmp/wolof-app.zip -d site
 
-      - name: Apply UI 3.1 and copy fixes
+      - name: Apply human copy pass
         run: |
           python3 - <<'PY'
           from pathlib import Path
@@ -47,15 +47,24 @@ jobs:
           s=p.read_text()
           for a,b in {
             "#063d2b":"#080b09",
-            "styles.css?v=22":"styles.css?v=32",
-            "data.js?v=22":"data.js?v=32",
-            "app.js?v=22":"app.js?v=32",
-            "href=\"styles.css\"":"href=\"styles.css?v=32\"",
-            "<script src=\"data.js\"></script><script src=\"app.js\"></script>":"<script src=\"data.js?v=32\"></script><script src=\"app.js?v=32\"></script>",
+            "styles.css?v=22":"styles.css?v=33",
+            "data.js?v=22":"data.js?v=33",
+            "app.js?v=22":"app.js?v=33",
+            "href=\"styles.css\"":"href=\"styles.css?v=33\"",
+            "<script src=\"data.js\"></script><script src=\"app.js\"></script>":"<script src=\"data.js?v=33\"></script><script src=\"app.js?v=33\"></script>",
             "Lessico-first · offline":"Wolof pratico · offline",
             "CORPUS V2.2":"CORPUS V2.2 · UI 3.0",
             "CORPUS V2</em>":"CORPUS V2.2 · UI 3.0</em>",
             "Wolof per situazioni reali":"Impara il Wolof, usalo davvero"
+          }.items(): s=s.replace(a,b)
+          # Human-facing navigation and labels.
+          for a,b in {
+            "Wolof pratico · offline":"Wolof · anche offline",
+            "CORPUS V2.2 · UI 3.0":"FONTI DICHIARATE",
+            ">Percorso</button>":">Impara</button>",
+            ">Vocabolario</button>":">Parole</button>",
+            ">Allenamento</button>":">Fai pratica</button>",
+            "Voci e frasi con fonte dichiarata. Nessuna traduzione generata al volo.":"Le parole dell'app vengono da fonti dichiarate."
           }.items(): s=s.replace(a,b)
           p.write_text(s)
 
@@ -80,6 +89,23 @@ jobs:
           }
           for a,b in changes.items():
             if a not in s: print("warning: missing",a)
+            s=s.replace(a,b)
+          # Copy pass: talk to the learner, not about the product.
+          human_copy={
+            "title('PERCORSO','Impara il Wolof, usalo davvero')":"title('IMPARA','Da dove ripartiamo?')",
+            "NJÀNG WOLOF · IMPARA PER SITUAZIONI":"OGGI IN WOLOF",
+            "Parole vere. Frasi vere. Wolof che usi.":"Parliamo un po' in Wolof?",
+            "Scegli una situazione e continua da lì":"Cosa vuoi saper dire?",
+            "title('ALLENAMENTO','Sessioni varie e ripasso mirato')":"title('FAI PRATICA','Cosa vuoi allenare?')",
+            "Inizia sessione":"Comincia",
+            "launch('Sessione mista','mixed'":"launch('Un po\\' di tutto','mixed'",
+            "title('PROGRESSI','Dati locali e avanzamento')":"title('PROGRESSI','Come stai andando?')",
+            "Sessione completata":"Fatto.",
+            "Risposta corretta":"Giusto.",
+            "Risposta errata":"Non questa.",
+            "id=\"again\">Continua →</button><button class=\"btn btn-white\" id=\"home\">Rifai la sessione":"id=\"again\">Continua</button><button class=\"btn btn-white\" id=\"home\">Rifai"
+          }
+          for a,b in human_copy.items():
             s=s.replace(a,b)
           p.write_text(s)
 
@@ -152,18 +178,18 @@ jobs:
           EOF
 
           cat > site/service-worker.js <<'EOF'
-          const CACHE='njang-wolof-ui31-20261006';
-          const ASSETS=['./','./index.html','./styles.css?v=32','./data.js?v=32','./app.js?v=32','./manifest.webmanifest','./icon.svg','./icon-180.png','./icon-192.png','./icon-512.png','./update.html'];
+          const CACHE='njang-wolof-copy-20261006';
+          const ASSETS=['./','./index.html','./styles.css?v=33','./data.js?v=33','./app.js?v=33','./manifest.webmanifest','./icon.svg','./icon-180.png','./icon-192.png','./icon-512.png','./update.html'];
           self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
           self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==CACHE).map(x=>caches.delete(x)))).then(()=>self.clients.claim())));
           self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;const u=new URL(e.request.url);if(u.origin!==self.location.origin)return;e.respondWith(fetch(e.request,{cache:'no-store'}).then(r=>{if(r&&r.ok){const q=r.clone();caches.open(CACHE).then(c=>c.put(e.request,q))}return r}).catch(()=>caches.match(e.request).then(h=>h||caches.match('./index.html'))))});
           EOF
 
           cat > site/update.html <<'EOF'
-          <!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#080b09"><title>Aggiornamento Njàng Wolof</title><style>body{font-family:system-ui,-apple-system,sans-serif;max-width:44rem;margin:0 auto;padding:2rem;background:#080b09;color:#fffdf5}.card{margin-top:8vh;padding:2rem;border:1px solid #29322c;border-radius:28px;background:#121814}.star{width:58px;height:58px;display:grid;place-items:center;border-radius:18px;background:#fdef42;color:#08100b;font-size:28px}h1{font-size:clamp(38px,8vw,66px);line-height:.85;letter-spacing:-.06em;text-transform:uppercase}p{color:#9aa79f;line-height:1.6}</style><div class="card"><div class="star">★</div><h1>Aggiorno Njàng Wolof</h1><p id="s">Pulisco solo la cache dell’app. I tuoi progressi restano salvati sul dispositivo.</p></div><script>(async()=>{try{if('serviceWorker'in navigator){const r=await navigator.serviceWorker.getRegistrations();await Promise.all(r.map(x=>x.unregister()))}if('caches'in window){const k=await caches.keys();await Promise.all(k.map(x=>caches.delete(x)))}document.getElementById('s').textContent='Aggiornamento completato. Apro la nuova interfaccia…'}catch(e){}setTimeout(()=>location.replace('./?ui=32'),700)})();</script>
+          <!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#080b09"><title>Aggiornamento Njàng Wolof</title><style>body{font-family:system-ui,-apple-system,sans-serif;max-width:44rem;margin:0 auto;padding:2rem;background:#080b09;color:#fffdf5}.card{margin-top:8vh;padding:2rem;border:1px solid #29322c;border-radius:28px;background:#121814}.star{width:58px;height:58px;display:grid;place-items:center;border-radius:18px;background:#fdef42;color:#08100b;font-size:28px}h1{font-size:clamp(38px,8vw,66px);line-height:.85;letter-spacing:-.06em;text-transform:uppercase}p{color:#9aa79f;line-height:1.6}</style><div class="card"><div class="star">★</div><h1>Aggiorno Njàng Wolof</h1><p id="s">Pulisco solo la cache dell’app. I tuoi progressi restano salvati sul dispositivo.</p></div><script>(async()=>{try{if('serviceWorker'in navigator){const r=await navigator.serviceWorker.getRegistrations();await Promise.all(r.map(x=>x.unregister()))}if('caches'in window){const k=await caches.keys();await Promise.all(k.map(x=>caches.delete(x)))}document.getElementById('s').textContent='Ci siamo. Riapro l'app…'}catch(e){}setTimeout(()=>location.replace('./?ui=33'),700)})();</script>
           EOF
 
-      - name: Validate UI 3.1
+      - name: Validate copy pass
         run: |
           test -f site/index.html
           test -f site/app.js
@@ -178,10 +204,10 @@ jobs:
           if "njang-wolof-v2" not in app:
               raise SystemExit("Progress storage key changed unexpectedly")
           idx=Path("site/index.html").read_text()
-          for marker in ("UI 3.0","styles.css?v=32","data.js?v=32","app.js?v=32"):
+          for marker in ("styles.css?v=33","data.js?v=33","app.js?v=33","FONTI DICHIARATE"):
               if marker not in idx:
                   raise SystemExit(f"Missing deployed marker: {marker}")
-          print("UI 3.1 validation passed; progress storage key preserved.")
+          print("Copy pass validation passed; progress storage key preserved.")
           PY
 
       - name: Upload Pages artifact
