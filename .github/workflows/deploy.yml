@@ -21,98 +21,124 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Reconstruct and verify PWA
+      - name: Reconstruct PWA
         run: |
           python3 - <<'PY'
           from pathlib import Path
           import base64, hashlib
-          parts = [Path(f".deploy/wolof-app.part0{i}").read_text(encoding="ascii").strip() for i in range(6)]
-          raw = base64.b64decode("".join(parts), validate=True)
-          expected = "65c55dc8383fc4b76b07ccd449709d3094e87988340017261b2381e88aee0ea1"
-          actual = hashlib.sha256(raw).hexdigest()
-          if actual != expected:
-              raise SystemExit(f"SHA256 mismatch: {actual}")
+          parts=[Path(f".deploy/wolof-app.part0{i}").read_text(encoding="ascii").strip() for i in range(6)]
+          raw=base64.b64decode("".join(parts),validate=True)
+          expected="65c55dc8383fc4b76b07ccd449709d3094e87988340017261b2381e88aee0ea1"
+          actual=hashlib.sha256(raw).hexdigest()
+          if actual!=expected: raise SystemExit(f"SHA256 mismatch: {actual}")
           Path("/tmp/wolof-app.zip").write_bytes(raw)
           PY
-          rm -rf site
-          mkdir site
+          rm -rf site && mkdir site
           unzip -tq /tmp/wolof-app.zip
           unzip -q /tmp/wolof-app.zip -d site
-          test -f site/index.html
-          test -f site/service-worker.js
-          test -f site/manifest.webmanifest
 
-      - name: Make PWA updates cache-safe
+      - name: Apply UI 3.0 and copy fixes
         run: |
           python3 - <<'PY'
           from pathlib import Path
+          import json
+
           p=Path("site/index.html")
           s=p.read_text()
-          s=s.replace('href="styles.css"','href="styles.css?v=22"')
-          s=s.replace('<script src="data.js"></script><script src="app.js"></script>','<script src="data.js?v=22"></script><script src="app.js?v=22"></script>')
-          s=s.replace('CORPUS V2</em>','CORPUS V2.2</em>')
+          for a,b in {
+            "#063d2b":"#080b09",
+            "styles.css?v=22":"styles.css?v=30",
+            "data.js?v=22":"data.js?v=30",
+            "app.js?v=22":"app.js?v=30",
+            "Lessico-first · offline":"Wolof pratico · offline",
+            "CORPUS V2.2":"CORPUS V2.2 · UI 3.0",
+            "Wolof per situazioni reali":"Impara il Wolof, usalo davvero"
+          }.items(): s=s.replace(a,b)
           p.write_text(s)
 
           p=Path("site/app.js")
           s=p.read_text()
-          old="if('serviceWorker'in navigator&&location.protocol!=='file:')navigator.serviceWorker.register('./service-worker.js').catch(()=>{});"
-          new="""if('serviceWorker' in navigator && location.protocol!=='file:'){
-            navigator.serviceWorker.register('./service-worker.js',{updateViaCache:'none'}).then(reg=>reg.update()).catch(()=>{});
-          }"""
-          if old in s:
-              s=s.replace(old,new)
+          changes={
+            "title('PERCORSO','Wolof per situazioni reali')":"title('PERCORSO','Impara il Wolof, usalo davvero')",
+            "VOCABOLARIO PRIMA · GRAMMATICA NEL CONTESTO":"NJÀNG WOLOF · IMPARA PER SITUAZIONI",
+            "Prima le parole che ti servono davvero.":"Parole vere. Frasi vere. Wolof che usi.",
+            "Impara per situazione, non per capitolo grammaticale":"Scegli una situazione e continua da lì",
+            "<small>padronanza</small>":"<small>progresso</small>",
+            "${p?'Ripassa':'Inizia'}":"${p?'Continua':'Inizia'}",
+            "title('ALLENAMENTO','Ripasso lessicale e sessioni mirate')":"title('ALLENAMENTO','Sessioni varie e ripasso mirato')",
+            "Avvia ripasso":"Inizia sessione",
+            "title('PROGRESSI','Dati locali e padronanza lessicale')":"title('PROGRESSI','Dati locali e avanzamento')",
+            "<div class=\"kicker\">PADRONANZA</div>":"<div class=\"kicker\">PROGRESSO</div>",
+            "launch('Ripasso misto','mixed'":"launch('Sessione mista','mixed'",
+            "title('QUIZ',label)":"title('ESERCIZIO',label)",
+            "?'Risultato':'Continua'":"?'Vedi risultato':'Continua'",
+            "id=\"again\">Ripeti</button><button class=\"btn btn-white\" id=\"home\">Percorso":"id=\"again\">Continua →</button><button class=\"btn btn-white\" id=\"home\">Rifai la sessione",
+            "$('#again').onclick=()=>quiz.id==='mixed'?startMixed():startModule(quiz.id);$('#home').onclick=()=>go('home')":"$('#again').onclick=()=>go('home');$('#home').onclick=()=>quiz.id==='mixed'?startMixed():startModule(quiz.id)"
+          }
+          for a,b in changes.items():
+            if a not in s: print("warning: missing",a)
+            s=s.replace(a,b)
           p.write_text(s)
+
+          p=Path("site/manifest.webmanifest")
+          m=json.loads(p.read_text())
+          m["background_color"]="#080b09";m["theme_color"]="#080b09"
+          p.write_text(json.dumps(m,ensure_ascii=False,indent=2))
           PY
-          cat > site/service-worker.js <<'EOF'
-          const CACHE='njang-wolof-v2-mobile-20261004-updatefix';
-          const ASSETS=['./','./index.html','./styles.css?v=22','./data.js?v=22','./app.js?v=22','./manifest.webmanifest','./icon.svg','./icon-180.png','./icon-192.png','./icon-512.png'];
-          self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting())));
-          self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
-          self.addEventListener('fetch',event=>{
-            if(event.request.method!=='GET') return;
-            const url=new URL(event.request.url);
-            if(url.origin!==self.location.origin) return;
-            event.respondWith(fetch(event.request,{cache:'no-store'}).then(response=>{
-              if(response&&response.ok){
-                const copy=response.clone();
-                caches.open(CACHE).then(cache=>cache.put(event.request,copy));
-              }
-              return response;
-            }).catch(()=>caches.match(event.request).then(hit=>hit||caches.match('./index.html'))));
-          });
+
+          cat >> site/styles.css <<'EOF'
+          /* UI 3.0: dark product system + Senegal identity */
+          :root{--green:#00853f;--green2:#005f2d;--yellow:#fdef42;--red:#e31b23;--ink:#fffdf5;--muted:#9aa79f;--paper:#080b09;--card:#121814;--line:rgba(255,255,255,.12);--soft:#18211b;--sg:#0e2c1c;--sy:#342f08;--sr:#361316;--shadow:none}
+          body{background:var(--paper);color:var(--ink)}
+          .side{background:#050806;border-right:1px solid var(--line)}
+          .brandicon{background:#fdef42;color:#07110b}.brand b,.hero h1,.section-head h2,.practice-hero h2,.qcard h2,.stat strong{font-family:"Arial Black","Helvetica Neue",Arial,sans-serif;letter-spacing:-.045em}
+          .brand small,.source-note p,.offline,.module p,.panel p,.section-head p,.word-card .it,.word-card footer,.prompt-sub,.fsource{color:var(--muted)}
+          .nav,.btn,.tag,.practice-option,.search,.select,.option,.qtag,.topstats>span{border-radius:999px}
+          .nav.active{background:#fdef42;color:#08100b}.source-note,.mini-card,.module,.panel,.stat,.source-card,.word-card,.qcard{background:var(--card);border-color:var(--line);box-shadow:none}
+          .top{background:rgba(8,11,9,.9);border-color:var(--line)}.title b{color:var(--ink)}.title small,.kicker,.ipa-line,.module-side strong{color:#fdef42}
+          .topstats>span{background:var(--card);border:1px solid var(--line);color:var(--muted)}.topstats b{color:var(--ink)}.avatar{background:#00853f}
+          .hero{position:relative;overflow:hidden;background:#00853f;color:#fff;border-color:rgba(255,255,255,.14);border-radius:30px;box-shadow:none;min-height:460px;padding:44px}
+          .hero:after{content:"★";position:absolute;right:-28px;top:-80px;font-size:270px;line-height:1;color:rgba(253,239,66,.16);pointer-events:none}
+          .hero-copy,.hero-stat{position:relative;z-index:1}.hero .kicker{display:inline-flex;background:#07110b;color:#fdef42;padding:8px 12px;border-radius:999px}
+          .hero h1{font-size:clamp(56px,6.5vw,94px);line-height:.83;text-transform:uppercase;color:#fff}.hero p{color:rgba(255,255,255,.86)}
+          .hero-stat{background:#08100b;border-color:rgba(255,255,255,.15)}.hero-stat p,.hero-stat small{color:var(--muted)}
+          .btn-yellow,.btn-dark{background:#fdef42;color:#08100b}.btn-white{background:transparent;color:var(--ink);border:1px solid rgba(255,255,255,.22)}.btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.45)}
+          .section-head h2{font-size:clamp(30px,4vw,54px);line-height:.9;text-transform:uppercase;color:var(--ink)}
+          .module{border-radius:24px}.module:hover{border-color:rgba(253,239,66,.55)}.mod-icon{border-radius:18px}.module:nth-child(3n+1) .mod-icon{background:#00853f;color:#fff}.module:nth-child(3n+2) .mod-icon{background:#fdef42;color:#08100b}.module:nth-child(3n) .mod-icon{background:#e31b23;color:#fff}
+          .tag{background:transparent;border:1px solid var(--line);color:var(--muted)}.notice{background:#0e2c1c;border-color:#00853f;color:var(--ink)}.notice-icon{background:#fdef42;color:#08100b}
+          .search,.select,.type-answer{background:var(--card);color:var(--ink);border-color:var(--line)}.word-card .ipa{color:#fdef42}.word-card .source{background:#0e2c1c;color:#7ee0a5}
+          .practice-hero{background:#00853f;color:#fff;border-color:#00853f}.practice-hero p{color:rgba(255,255,255,.84)}.practice-option{background:var(--card);color:var(--ink);border-color:var(--line)}
+          .qbar,.meter,.bar{background:rgba(255,255,255,.1)}.qbar i,.meter i,.bar i{background:#fdef42}.qtag{background:#fdef42;color:#08100b}.qcard h2{color:var(--ink);font-size:clamp(28px,4.5vw,48px);line-height:.96}
+          .option{background:#18211b;color:var(--ink);border-color:var(--line)}.option.selected{background:#342f08;border-color:#fdef42}.option.correct{background:#0e2c1c;border-color:#00853f}.option.wrong{background:#361316;border-color:#e31b23}
+          .feedback.ok{background:#0e2c1c;border-color:#00853f}.feedback.no{background:#361316;border-color:#e31b23}.ring{background:conic-gradient(#fdef42 var(--pct),#202a23 0)}.ring:after{background:var(--card)}
+          .toast{background:#fdef42;color:#08100b;border-radius:999px;box-shadow:none}
+          @media(max-width:780px){.top,.filters,.qtop{background:#080b09}.hamb{background:var(--card);color:var(--ink);border-color:var(--line);border-radius:999px}.hero{padding:28px 20px;min-height:auto}.hero h1{font-size:clamp(42px,12vw,62px)}.mobile-nav{background:rgba(5,8,6,.96);border-color:var(--line)}.mobile-nav button.active{background:#fdef42;color:#08100b}.qactions{background:linear-gradient(180deg,rgba(18,24,20,0),var(--card) 24%)}}
           EOF
 
-      - name: Create safe updater
-        run: |
-          cat > site/update.html <<'EOF'
-          <!doctype html>
-          <meta charset="utf-8">
-          <meta name="viewport" content="width=device-width,initial-scale=1">
-          <title>Aggiornamento Njàng Wolof</title>
-          <style>
-            body{font-family:system-ui,-apple-system,sans-serif;max-width:42rem;margin:0 auto;padding:2rem;background:#0b0b0b;color:#f5f5f5}
-            .card{padding:1.25rem;border:1px solid #333;border-radius:16px;background:#151515}
-          </style>
-          <div class="card"><h1>Aggiornamento app…</h1><p id="s">Pulizia della sola cache dell'app. I progressi non vengono cancellati.</p></div>
-          <script>
-          (async()=>{
-            try{
-              if('serviceWorker' in navigator){
-                const regs=await navigator.serviceWorker.getRegistrations();
-                await Promise.all(regs.map(r=>r.unregister()));
-              }
-              if('caches' in window){
-                const keys=await caches.keys();
-                await Promise.all(keys.map(k=>caches.delete(k)));
-              }
-              document.getElementById('s').textContent='Aggiornamento completato. Riapro la nuova versione…';
-            }catch(e){
-              document.getElementById('s').textContent='Cache aggiornata parzialmente. Riapro comunque l’app…';
-            }
-            setTimeout(()=>location.replace('./?v=23'),700);
-          })();
-          </script>
+          cat > site/service-worker.js <<'EOF'
+          const CACHE='njang-wolof-ui3-20261006';
+          const ASSETS=['./','./index.html','./styles.css?v=30','./data.js?v=30','./app.js?v=30','./manifest.webmanifest','./icon.svg','./icon-180.png','./icon-192.png','./icon-512.png','./update.html'];
+          self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
+          self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==CACHE).map(x=>caches.delete(x)))).then(()=>self.clients.claim())));
+          self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;const u=new URL(e.request.url);if(u.origin!==self.location.origin)return;e.respondWith(fetch(e.request,{cache:'no-store'}).then(r=>{if(r&&r.ok){const q=r.clone();caches.open(CACHE).then(c=>c.put(e.request,q))}return r}).catch(()=>caches.match(e.request).then(h=>h||caches.match('./index.html'))))});
           EOF
+
+          cat > site/update.html <<'EOF'
+          <!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#080b09"><title>Aggiornamento Njàng Wolof</title><style>body{font-family:system-ui,-apple-system,sans-serif;max-width:44rem;margin:0 auto;padding:2rem;background:#080b09;color:#fffdf5}.card{margin-top:8vh;padding:2rem;border:1px solid #29322c;border-radius:28px;background:#121814}.star{width:58px;height:58px;display:grid;place-items:center;border-radius:18px;background:#fdef42;color:#08100b;font-size:28px}h1{font-size:clamp(38px,8vw,66px);line-height:.85;letter-spacing:-.06em;text-transform:uppercase}p{color:#9aa79f;line-height:1.6}</style><div class="card"><div class="star">★</div><h1>Aggiorno Njàng Wolof</h1><p id="s">Pulisco solo la cache dell’app. I tuoi progressi restano salvati sul dispositivo.</p></div><script>(async()=>{try{if('serviceWorker'in navigator){const r=await navigator.serviceWorker.getRegistrations();await Promise.all(r.map(x=>x.unregister()))}if('caches'in window){const k=await caches.keys();await Promise.all(k.map(x=>caches.delete(x)))}document.getElementById('s').textContent='Aggiornamento completato. Apro la nuova interfaccia…'}catch(e){}setTimeout(()=>location.replace('./?ui=30'),700)})();</script>
+          EOF
+
+      - name: Validate UI 3.0
+        run: |
+          test -f site/index.html
+          test -f site/app.js
+          test -f site/styles.css
+          test -f site/service-worker.js
+          grep -q "UI 3.0" site/index.html
+          grep -q "njang-wolof-v2" site/app.js
+          grep -q "Continua →" site/app.js
+          grep -q "Rifai la sessione" site/app.js
+          node --check site/app.js
+          node --check site/service-worker.js
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
