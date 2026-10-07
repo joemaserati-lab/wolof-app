@@ -44,15 +44,6 @@ window.WOLOF_DATA = {
       "note": "Dizionario Wolof-English di Pamela Munro e Dieynaba Gaye, UCLA Occasional Papers in Linguistics 19 (1997)."
     },
     {
-      "id": "UCLA-COURSE",
-      "name": "Wolof Online Course",
-      "publisher": "African Languages at UCLA",
-      "type": "Corso universitario",
-      "usage": "Riferimento per lingua d’uso e progressione",
-      "url": "https://aflang.humanities.ucla.edu/language-courses/wolof/",
-      "note": "Corso basato su conversazioni di parlanti nativi, con lessico quotidiano, strutture, pronuncia, numeri e descrizioni."
-    },
-    {
       "id": "LLACAN",
       "name": "Dictionnaires électroniques LLACAN — Wolof-Français",
       "publisher": "LLACAN / CNRS / Huma-Num",

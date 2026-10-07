@@ -8,7 +8,7 @@ test('only approved institutional senses are published; quarantined IDs stay arc
  const report=read('corpus-validation-report.json');assert.equal(D.lexicon.length,report.published);assert.ok(report.distinctLexicalForms>=500);assert.equal(candidates.length,654);assert.equal(report.published+report.quarantined,report.candidates);
  for(const w of D.lexicon){assert.ok(L.isValidated(w));assert.equal(ledger[w.id].status,'verified');assert.equal(ledger[w.id].binding,w.validation.binding);assert.ok(w.validation.evidence[0].sourceMeaning);}
  for(const w of candidates){assert.ok(ledger[w.id]);if(ledger[w.id].status!=='verified')assert.ok(!D.lexicon.some(e=>e.id===w.id));else assert.equal(D.lexicon.find(e=>e.id===w.id).wolof,w.wolof);}
- assert.equal(D.patterns.length,0);
+ assert.equal(D.patterns.length,0);assert.equal(new Set(D.sources.map(s=>s.id)).size,D.sources.length);
 });
 test('muus has distinct reviewed cat and astute senses; generic intelligent is quarantined',()=>{
  const senses=D.lexicon.filter(w=>w.wolof==='muus');assert.equal(senses.length,2);

@@ -92,6 +92,7 @@ def generate():
     data['app']['method']='Solo voci con forma e significato controllati su fonti istituzionali; esercizi con contesto per i significati multipli.'
     data['validationPolicy']={'required':True,'schemaVersion':1,'reviewedOn':'2026-10-07','pendingCount':len(rejected),'candidateCount':len(candidates)}
     data['sources'].append({'id':'LLACAN-QUAL','name':'La qualification en wolof — exemple 25','publisher':'LLACAN / CNRS','type':'Studio linguistico accademico','usage':'Distinzione dei significati di muus e mboq','url':source_urls['LLACAN-QUAL'],'note':'L’estratto accademico indicizzato distingue muus nominale (chat) e verbale (être rusé). L’endpoint originale non è attualmente accessibile; nessuna certificazione madrelingua è implicata.'})
+    data['sources']=[s for s in data['sources'] if s['id']!='UCLA-COURSE']
     data['sources'].append({'id':'UCLA-COURSE','name':'Wolof Online Course','publisher':'University of California, Los Angeles','type':'Corso universitario con glossari e lezioni','url':'https://aflang.humanities.ucla.edu/language-courses/wolof/','usage':'Riscontro puntuale di forma e significato; pagina del PDF e impronta del documento conservate.'})
     for m in data['modules']:
         group=[w for w in accepted if w['category']==m['id']]
