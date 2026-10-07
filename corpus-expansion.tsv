@@ -1,0 +1,256 @@
+# category|PDF page (1-based)|part of speech|wolof|italian
+azioni|224|verb|aar|proteggere
+azioni|224|verb|abal|prestare un oggetto
+azioni|224|verb|abb|prendere in prestito un oggetto
+azioni|224|verb|agali|portare a termine
+azioni|224|verb|agsi|arrivare
+azioni|224|verb|bind|scrivere
+azioni|224|verb|bokk|condividere; fare parte di
+azioni|224|verb|daje|incontrarsi
+azioni|224|verb|daw|correre
+azioni|224|verb|dawal|guidare un veicolo
+azioni|224|verb|def|fare
+azioni|224|verb|defar|realizzare; riparare
+azioni|224|verb|delloo|restituire
+azioni|224|verb|dellu|ritornare
+azioni|224|verb|dellusi|tornare qui
+azioni|224|verb|diggal|consigliare
+azioni|224|verb|jappale|aiutare
+azioni|224|verb|dindi|togliere
+azioni|224|verb|dolli|aggiungere
+azioni|224|verb|dox|camminare
+azioni|224|verb|doxantu|passeggiare
+azioni|224|verb|dundal|nutrire
+azioni|224|verb|fanaan|trascorrere la notte
+azioni|224|verb|fatte|dimenticare
+azioni|224|verb|fatteliku|ricordarsi
+mercato|224|verb|fay|pagare
+azioni|224|verb|fecc|ballare
+azioni|224|verb|féey|nuotare
+azioni|225|verb|for|raccogliere
+azioni|225|verb|fekk|trovare qualcuno o qualcosa in un luogo
+azioni|225|verb|door|cominciare
+azioni|225|verb|dòor|colpire
+azioni|225|verb|gëstu|fare ricerche
+azioni|225|verb|jòge|partire da; provenire da
+azioni|225|verb|jëflante|interagire
+azioni|225|verb|wonale|presentare qualcuno
+salute_emozioni|225|verb|jooy|piangere
+azioni|225|verb|nafar|ripassare una lezione
+azioni|225|verb|ñaan|chiedere qualcosa; pregare
+saluti|225|verb|nuyu|salutare
+saluti|225|verb|ndokkeel|congratularsi
+saluti|225|verb|jégalu|scusarsi
+azioni|225|verb|sàcc|rubare
+azioni|225|verb|saytu|gestire
+azioni|225|verb|sëlmu|lavarsi il viso
+azioni|225|verb|sol|indossare
+azioni|225|verb|solu|vestirsi
+azioni|225|verb|taggat|formare; allenare
+azioni|226|verb|tëdd|sdraiarsi
+azioni|226|verb|tëddi|andare a letto
+azioni|226|verb|soppi|cambiare
+saluti|226|verb|gërem|ringraziare
+azioni|226|verb|génn|uscire
+azioni|226|verb|gis|vedere
+azioni|226|verb|indi|portare qui
+azioni|226|verb|jaar|passare per
+azioni|226|verb|jël|prendere
+azioni|226|verb|jòg|alzarsi
+azioni|226|verb|juum|sbagliare
+azioni|226|verb|jéem|provare; tentare
+luoghi_direzioni|226|verb|jéggi|attraversare
+azioni|226|verb|jottali|passare qualcosa a qualcuno
+azioni|226|verb|jot|ricevere
+mercato|226|verb|leb|prendere denaro in prestito
+mercato|226|verb|lebal|prestare denaro
+azioni|226|verb|liir|leggere
+persone|226|verb|màggal|celebrare
+azioni|226|verb|may|offrire; regalare
+azioni|226|verb|moytu|fare attenzione a; evitare
+azioni|226|verb|nettali|raccontare
+azioni|226|verb|ñëw|venire
+azioni|226|verb|ñibbi|rientrare a casa
+azioni|227|verb|raxasu|lavarsi le mani
+azioni|227|verb|root|attingere acqua
+azioni|227|verb|sangu|fare la doccia
+azioni|227|verb|seeti|fare visita a qualcuno
+azioni|227|verb|seetaan|guardare
+azioni|227|verb|seetlu|notare
+azioni|227|verb|seet|cercare
+azioni|227|verb|tànn|scegliere
+azioni|227|verb|taal|accendere
+saluti|227|verb|tàggu|congedarsi
+azioni|227|verb|tëj|chiudere
+azioni|227|verb|toog|sedersi
+azioni|227|verb|toppatoo|prendersi cura di
+azioni|227|verb|ubbi|aprire
+luoghi_direzioni|227|verb|wàcc|scendere
+azioni|60|verb|teg|posare
+azioni|60|verb|taxaw|stare in piedi
+azioni|60|verb|yéeg|salire; arrampicarsi
+azioni|60|verb|dugg|entrare
+azioni|60|verb|xool|guardare; osservare
+azioni|60|verb|yòbbu|portare altrove
+azioni|60|verb|xaar|aspettare
+azioni|60|verb|yònnee|inviare
+azioni|14|verb|yendu|trascorrere la giornata
+azioni|14|verb|noos|divertirsi
+azioni|49|stative-verb|am|avere
+azioni|49|stative-verb|soxla|avere bisogno di
+azioni|49|stative-verb|bëgg|volere; amare
+azioni|49|stative-verb|mën|potere; essere capace di
+azioni|49|stative-verb|war|dovere
+azioni|49|stative-verb|xam|sapere; conoscere
+azioni|49|stative-verb|dégg|sentire; capire una lingua
+salute_emozioni|228|stative-verb|bees|essere nuovo
+salute_emozioni|228|stative-verb|dëggër|essere duro
+salute_emozioni|228|stative-verb|doywar|essere strano
+salute_emozioni|228|stative-verb|gëm|credere
+salute_emozioni|228|stative-verb|gëmmentu|avere sonno
+salute_emozioni|228|stative-verb|leer|essere chiaro
+salute_emozioni|228|stative-verb|liw|avere freddo
+salute_emozioni|228|stative-verb|mel|assomigliare
+salute_emozioni|228|stative-verb|miin|avere familiarità con
+salute_emozioni|228|stative-verb|muus|essere intelligente
+salute_emozioni|229|stative-verb|namm|sentire la mancanza di qualcuno
+salute_emozioni|229|stative-verb|noppi|essere calmo; tacere
+salute_emozioni|229|stative-verb|nooy|essere morbido
+salute_emozioni|229|stative-verb|oyof|essere leggero
+azioni|229|stative-verb|pare|essere pronto; avere finito
+salute_emozioni|229|stative-verb|reew|essere maleducato
+salute_emozioni|229|stative-verb|set|essere pulito
+salute_emozioni|229|stative-verb|tilim|essere sporco
+salute_emozioni|229|stative-verb|tooy|essere bagnato
+salute_emozioni|229|stative-verb|wòolu|fidarsi
+salute_emozioni|229|stative-verb|wòor|essere sicuro
+salute_emozioni|229|stative-verb|wuute|essere diverso
+azioni|229|stative-verb|xalaat|pensare
+salute_emozioni|229|stative-verb|yaakaar|sperare
+luoghi_direzioni|229|stative-verb|yaatu|essere largo
+numeri_tempo|229|stative-verb|yágg|durare a lungo
+numeri_tempo|216|adverb|démb|ieri
+numeri_tempo|216|adverb|biig|ieri notte
+numeri_tempo|216|adverb|bërki démb|l'altro ieri
+numeri_tempo|216|adverb|gannaaw suba|dopodomani
+numeri_tempo|216|adverb|daaw|l'anno scorso
+numeri_tempo|216|adverb|ren|quest'anno
+numeri_tempo|216|adverb|déwén|l'anno prossimo
+numeri_tempo|216|adverb|bés bu nekk|ogni giorno
+numeri_tempo|216|adverb|saa yu nekk|sempre
+numeri_tempo|216|adverb|ci saa si|subito
+numeri_tempo|216|adverb|faraldi|spesso
+numeri_tempo|216|adverb|keroog|l'altro giorno
+numeri_tempo|216|adverb|léegi-léegi|proprio adesso
+numeri_tempo|216|adverb|yennsaay|a volte
+persone|46|noun|jarbaat|nipote di zio o zia
+persone|46|noun|goro|suocero; suocera
+persone|46|noun|séex|gemelli
+persone|46|noun|taaw|primogenito
+persone|46|noun|caat|figlio più piccolo
+persone|46|noun|turondoo|omonimo; persona con il tuo stesso nome
+persone|46|verb|juddu|nascere
+persone|46|verb|dund|vivere; essere vivo
+persone|46|verb|sëy|sposarsi
+persone|46|verb|fase|divorziare da qualcuno
+persone|211|noun|mbokk|parente
+persone|211|noun|xeet|tipo; gruppo
+persone|233|noun|njaboot|famiglia
+casa_oggetti|59|noun|kaas|bicchiere; tazza
+casa_oggetti|60|noun|kaye|quaderno
+casa_oggetti|60|noun|siwo|secchio
+casa_oggetti|60|noun|saabu|sapone
+casa_oggetti|189|noun|roosuwaar|annaffiatoio
+casa_oggetti|189|noun|peel|pala
+casa_oggetti|189|noun|pik|piccone
+casa_oggetti|189|noun|burwet|carriola
+casa_oggetti|189|noun|buum|corda
+casa_oggetti|189|noun|bant|bastone; pezzo di legno
+casa_oggetti|189|noun|marto|martello
+casa_oggetti|189|noun|rato|rastrello
+casa_oggetti|232|noun|sàq|granaio
+casa_oggetti|234|noun|robine|rubinetto
+cibo|218|noun|ndékki|colazione
+cibo|218|noun|añ|pranzo
+cibo|218|noun|njogonal|merenda
+cibo|218|noun|reer|cena
+cibo|232|noun|mango|mango
+cibo|232|noun|meññeef|frutto
+cibo|232|noun|lejum|verdura
+cibo|232|noun|bisaab|ibisco; acetosa di Guinea
+cibo|232|noun|nawe|rapa
+cibo|233|noun|pepp|cereali
+cibo|233|noun|ñam|cibo
+mercato|233|noun|am-am|reddito; beni posseduti
+mercato|233|noun|payoor|salario
+salute_emozioni|162|noun|jë|fronte
+salute_emozioni|162|noun|kanam|viso
+salute_emozioni|162|noun|kawar|capelli
+salute_emozioni|162|noun|bët|occhio
+salute_emozioni|162|noun|bakkan|naso
+salute_emozioni|162|noun|sikkim|barba; mento
+salute_emozioni|162|noun|nopp|orecchio
+salute_emozioni|162|noun|lex|guancia
+salute_emozioni|162|noun|gémmiñ|bocca
+salute_emozioni|162|noun|tuñ|labbro
+salute_emozioni|162|noun|loxo|mano
+salute_emozioni|162|noun|mbagg|spalla
+salute_emozioni|162|noun|concc|gomito
+salute_emozioni|162|noun|óom|ginocchio
+salute_emozioni|162|noun|pooj|coscia
+salute_emozioni|162|noun|ween|seno
+salute_emozioni|162|noun|gannaaw|schiena
+salute_emozioni|162|noun|dereet|sangue
+salute_emozioni|162|verb|tisoli|starnutire
+salute_emozioni|162|verb|damm|rompere
+salute_emozioni|162|verb|ñaq|sudare
+salute_emozioni|162|verb|tane|sentirsi meglio
+salute_emozioni|162|verb|faj|curare
+salute_emozioni|162|stative-verb|wér|stare bene; essere in salute
+salute_emozioni|162|verb|setal|pulire
+salute_emozioni|162|verb|faju|curarsi; ricevere cure
+salute_emozioni|162|stative-verb|tiis|essere triste
+salute_emozioni|162|stative-verb|kontaan|essere contento
+meteo|232|noun|guy|baobab
+meteo|232|noun|reen|radice
+meteo|232|noun|xob|foglia
+meteo|232|noun|xas|corteccia
+meteo|232|noun|dàtt|tronco
+meteo|232|noun|matt|legna da ardere
+meteo|232|noun|këriñ|carbone di legna
+meteo|233|noun|jamano|stagione; epoca
+meteo|233|noun|nawet|stagione delle piogge
+meteo|233|noun|noor|stagione secca
+meteo|234|noun|fas|cavallo
+meteo|234|noun|mbaam sëf|asino
+meteo|234|noun|mbaam xuux|maiale
+meteo|234|noun|séq|gallo
+meteo|234|noun|xaj|cane
+meteo|234|noun|lëg|coniglio
+meteo|234|noun|picc|uccello
+meteo|234|noun|kaña|ratto
+meteo|234|noun|gunóor|insetto
+meteo|234|noun|max|termite
+meteo|234|noun|ngooñ|fieno
+meteo|234|noun|tos|compost
+meteo|234|noun|ñax|erba; erbacce
+meteo|231|verb|ji|seminare
+meteo|231|verb|jëmbët|piantare
+meteo|231|verb|sax|germogliare
+meteo|231|verb|roose|annaffiare
+meteo|231|verb|natt|misurare
+meteo|231|verb|dajale|radunare; raccogliere insieme
+meteo|231|verb|lakk|bruciare
+meteo|231|verb|yeew|legare
+meteo|231|verb|yokk|aumentare; aggiungere
+luoghi_direzioni|60|noun|dëkk|città; villaggio; luogo in cui si abita
+luoghi_direzioni|232|noun|pepiñeer|vivaio
+luoghi_direzioni|232|noun|foraas|pozzo trivellato
+luoghi_direzioni|232|noun|seyaan|pozzo con accesso in discesa
+luoghi_direzioni|233|noun|yoon|strada; percorso
+luoghi_direzioni|233|noun|pànt|pendio
+saluti|14|noun|jàmm|pace
+saluti|14|pronoun|dara|nulla; niente
+saluti|14|adverb|rekk|soltanto
+saluti|59|interjection|kaay|vieni qui!
+saluti|60|interjection|naam|sì? (risposta quando si viene chiamati)

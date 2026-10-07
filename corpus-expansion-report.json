@@ -1,0 +1,21 @@
+{
+  "before": 358,
+  "added": 296,
+  "after": 654,
+  "words": 255,
+  "phrases": 41,
+  "withExamples": 21,
+  "skippedDuplicateForms": [],
+  "byCategory": {
+    "saluti": 21,
+    "persone": 18,
+    "numeri_tempo": 15,
+    "casa_oggetti": 18,
+    "cibo": 20,
+    "mercato": 7,
+    "luoghi_direzioni": 12,
+    "azioni": 95,
+    "salute_emozioni": 58,
+    "meteo": 32
+  }
+}

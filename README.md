@@ -24,7 +24,9 @@ GitHub Pages now publishes editable `site/` sources directly after validation. A
 
 Add reviewed packs in `site/lexicon-packs.js` as `window.WOLOF_PACKS = [{schemaVersion: 1, entries: [...]}]`. Each entry needs a unique stable `id`, `wolof`, `italian`, `kind` (`word`/`phrase`), existing module `category`, existing `source` and precise `ref`. Examples use `{wolof, italian, sourceId, ref}`. Add new modules and sources to `data.js` first. Duplicate IDs and unknown references are rejected; counts update automatically. Keep spelling errors out of accepted `variants`.
 
-This release makes the existing corpus extensible; it does not claim dictionary completeness or import thousands of unverified words.
+The October 2026 expansion adds 296 source-attested entries (255 lexical entries and 41 phrases), bringing the corpus from 358 to 654. Forms and meanings were checked against Peace Corps Senegal's 2012 manual; every added entry cites a one-based PDF page. Italian translations are editorial, not certified by a native speaker. Unknown levels and frequencies remain null. Twenty-one new lexical entries have examples drawn from complete phrases already attested in the corpus. This is a practical expansion, not dictionary completeness.
+
+`corpus-expansion.tsv` and `corpus-phrases.tsv` are the editable source lists. Run `python3 build-corpus.py` to regenerate `site/lexicon-packs.js` and `corpus-expansion-report.json`. IDs derive from the normalized Wolof form, so row reordering preserves progress. Duplicate forms against the legacy corpus and within the pack are excluded. The report lists category totals and any excluded duplicates. Legacy number entries retain their kind and IDs and now count toward lexical totals and word exercise formats.
 
 ## Tests and deployment
 

@@ -109,7 +109,7 @@
  }
  function buildQuestions(cat,count=10){
   const ws=weightedWords(cat),qs=[],recent=[];
-  const words=ws.filter(w=>w.kind==='word'),phrases=ws.filter(w=>w.kind==='phrase');
+  const words=ws.filter(w=>w.kind!=='phrase'),phrases=ws.filter(w=>w.kind==='phrase');
   const selected=[],used=new Set();
   for(let i=0;i<count;i++){let pool=i%3===2?phrases:words;let w=pool.find(w=>!used.has(w.id))||ws.find(w=>!used.has(w.id))||ws[i%ws.length];if(!w)break;selected.push(w);used.add(w.id);}
   selected.forEach((w,i)=>{const mode=L.chooseFormat(w,S.wordStats[w.id],recent),q=makeWordQ(w,i,mode);q.format=(q.kind==='cloze'&&mode!=='context')?'cloze':(q.kind==='reorder'?'reorder':mode);recent.push(q.format);qs.push(q);});

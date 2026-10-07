@@ -1,7 +1,7 @@
 window.WOLOF_DATA = {
   "app": {
     "name": "Njàng Wolof",
-    "version": "2.3.0",
+    "version": "2.4.0",
     "language": "it",
     "method": "Lessico-first: circa 80% vocabolario e frasi, 20% grammatica contestuale.",
     "target": "Costruire un lessico pratico ampio prima di aumentare la complessità grammaticale."

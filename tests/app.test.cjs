@@ -5,7 +5,7 @@ function boot(saved){
  const document={querySelector:node,querySelectorAll:()=>[]};
  const ctx={window:{scrollTo(){},addEventListener(){}},document,navigator:{onLine:true},location:{protocol:'file:'},localStorage:{getItem:k=>store[k]||null,setItem:(k,v)=>store[k]=v},setTimeout(){},clearTimeout(){},confirm:()=>false,console};
  vm.createContext(ctx);for(const file of ['data.js','learning.js','lexicon-packs.js'])vm.runInContext(fs.readFileSync(__dirname+'/../site/'+file,'utf8'),ctx);
- let app=fs.readFileSync(__dirname+'/../site/app.js','utf8');app=app.replace(" $('#hamb').onclick", " window.testAPI={buildQuestions,startModule,startMixed,launch,next,check,wordById,getState:()=>S,getQuiz:()=>quiz};\n $('#hamb').onclick");vm.runInContext(app,ctx);
+ let app=fs.readFileSync(__dirname+'/../site/app.js','utf8');app=app.replace(" $('#hamb').onclick", " window.testAPI={buildQuestions,makeWordQ,startModule,startMixed,launch,next,check,wordById,getState:()=>S,getQuiz:()=>quiz};\n $('#hamb').onclick");vm.runInContext(app,ctx);
  return {api:ctx.window.testAPI,data:ctx.window.WOLOF_DATA,node,store};
 }
 const legacy={xp:120,streak:4,lastStudy:'2026-10-06',answered:10,correct:7,wordStats:{w071:{seen:2,correct:1}},moduleBest:{saluti:80},sessions:1};
@@ -23,4 +23,13 @@ test('all module sessions contain 10 valid questions and two unscored interludes
 });
 test('known different lexical answer is not a spelling near miss',()=>{
  const {api,node}=boot(legacy);api.launch('Test','mixed',[{type:'typing',kind:'word',answer:'bëccëg',answers:['bëccëg'],explanation:''}]);node('#typed').value='ngoon';api.check();assert.equal(api.getQuiz().score,0);
+});
+test('every expanded entry generates valid questions in every supported format',()=>{
+ const {api,data}=boot(legacy),L=require('../site/learning.js');
+ for(const w of data.lexicon)for(const format of L.formats(w)){
+  const q=api.makeWordQ(w,4,format);assert.ok(q.prompt&&q.answer,w.id+' '+format);
+  if(q.type==='choice'){assert.equal(q.options.length,4,w.id+' '+format);assert.equal(new Set(q.options.map(L.normalize)).size,4);assert.ok(q.options.includes(q.answer));}
+  else assert.ok(q.answers.includes(q.answer));
+  if(format==='context')assert.match(q.prompt,/____/);
+ }
 });
