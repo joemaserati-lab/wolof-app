@@ -113,6 +113,10 @@
   const selected=[],used=new Set();
   for(let i=0;i<count;i++){let pool=i%3===2?phrases:words;let w=pool.find(w=>!used.has(w.id))||ws.find(w=>!used.has(w.id))||ws[i%ws.length];if(!w)break;selected.push(w);used.add(w.id);}
   selected.forEach((w,i)=>{const mode=L.chooseFormat(w,S.wordStats[w.id],recent),q=makeWordQ(w,i,mode);q.format=(q.kind==='cloze'&&mode!=='context')?'cloze':(q.kind==='reorder'?'reorder':mode);recent.push(q.format);qs.push(q);});
+  const dialog=shuffle(dialogueBank().filter(q=>!cat||q.category===cat))[0];
+  if(dialog){const index=qs.findIndex(q=>q.wordId===dialog.wordId);qs[index>=0?index:8]={...dialog,format:'dialogue',options:shuffle(dialog.options)};}
+  const pattern=shuffle(D.patterns.filter(p=>!cat||p.category===cat))[0];
+  if(pattern)qs[9]={...pattern,type:'choice',kind:'pattern',format:'pattern',options:shuffle(pattern.options)};
   return qs;
  }
  function startModule(id){let m=D.modules.find(x=>x.id===id);launch(m.title,id,buildQuestions(id,10))}

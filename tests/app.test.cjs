@@ -18,7 +18,7 @@ test('legacy progress survives load and partial grading round trip',()=>{
 });
 test('all module sessions contain 10 valid questions and two unscored interludes',()=>{
  const {api,node,data}=boot(legacy);
- for(const m of data.modules){const qs=api.buildQuestions(m.id);assert.equal(qs.length,10);assert.equal(new Set(qs.map(q=>q.wordId)).size,10);assert.ok(new Set(qs.map(q=>q.format)).size>=3);for(const q of qs){assert.ok(q.answer);assert.ok(q.prompt);assert.ok(api.wordById(q.wordId).category===m.id);if(q.type==='choice'){assert.equal(q.options.length,4);assert.ok(q.options.includes(q.answer));}else assert.ok(q.answers.includes(q.answer));}
+ for(const m of data.modules){const qs=api.buildQuestions(m.id);assert.equal(qs.length,10);const ids=qs.map(q=>q.wordId).filter(Boolean);assert.equal(new Set(ids).size,ids.length);assert.ok(new Set(qs.map(q=>q.format)).size>=3);for(const q of qs){assert.ok(q.answer);assert.ok(q.prompt);assert.ok(q.wordId?api.wordById(q.wordId).category===m.id:q.category===m.id);if(q.type==='choice'){assert.equal(q.options.length,4);assert.ok(q.options.includes(q.answer));}else assert.ok(q.answers.includes(q.answer));}
  api.startModule(m.id);for(let i=1;i<=10;i++){api.next();if(i===3||i===7){assert.match(node('#view').innerHTML,new RegExp('Pausa '+(i===3?1:2)+'/2'));node('#resume').onclick();}}}
 });
 test('known different lexical answer is not a spelling near miss',()=>{
