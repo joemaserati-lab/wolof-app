@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "origin": "user-relayed-native-speaker",
+  "checkedOn": "2026-10-07",
+  "authorityNote": "Correzioni d’uso riferite direttamente dall’utente, attribuite a un madrelingua. Identità e varietà linguistica non dichiarate; nessuna intervista indipendente o certificazione è implicata.",
+  "annotations": [
+    {
+      "id": "w070",
+      "senseLabel": "momento della giornata",
+      "note": "Suba, scritto senza accenti, può indicare mattina o domani secondo il contesto. Le due accezioni hanno schede separate."
+    },
+    {
+      "id": "w086",
+      "senseLabel": "giorno successivo a oggi (accezione documentata)",
+      "translationGroup": "time-tomorrow",
+      "note": "Il testo estratto di Ay Baati Wolof, p. 53, riporta domani e futuro. La correzione riferita dal madrelingua evidenzia futuro; questa accezione ha una scheda separata. Non ridurre la parola a un’unica traduzione."
+    },
+    {
+      "id": "w011",
+      "senseLabel": "saluto per rivedersi il giorno successivo",
+      "translationGroup": "farewell-tomorrow",
+      "note": "Il manuale traduce questa formula come a domani. Il madrelingua consultato dall’utente la usa più come arrivederci/addio: vedi la scheda di congedo. Per a domani propone Ba suba. L’uso dipende dal contesto."
+    },
+    {
+      "id": "w014",
+      "italian": "A dopo.",
+      "senseLabel": "saluto per rivedersi più tardi",
+      "note": "Resa italiana corretta in a dopo secondo la revisione riferita dall’utente. La citazione originale del manuale resta See you soon; non è stata riscritta."
+    }
+  ],
+  "entries": [
+    {
+      "id": "native-suba-tomorrow",
+      "category": "numeri_tempo",
+      "wolof": "suba",
+      "italian": "domani",
+      "kind": "word",
+      "pos": "avverbio temporale",
+      "senseLabel": "giorno successivo a oggi (uso riferito dal madrelingua)",
+      "translationGroup": "time-tomorrow",
+      "note": "Suba si scrive senza accenti. Può significare mattina o domani: qui si esercita domani. Il testo estratto del dizionario, p. 179, riporta entrambi i significati sotto subë, con suba come variante.",
+      "spellingNote": "Scrivi suba, senza aggiungere accenti."
+    },
+    {
+      "id": "native-elleg-future",
+      "category": "numeri_tempo",
+      "wolof": "ëllëg",
+      "italian": "futuro",
+      "kind": "word",
+      "pos": "nome",
+      "senseLabel": "tempo a venire (accezione generale)",
+      "note": "Accezione indicata dal madrelingua e presente anche nel testo estratto del dizionario a p. 53. Domani rimane un’altra accezione documentata; questa scheda richiede futuro.",
+      "spellingNote": "Mantieni entrambe le ë e la doppia l: ëllëg."
+    },
+    {
+      "id": "native-ba-suba",
+      "category": "saluti",
+      "wolof": "Ba suba",
+      "italian": "A domani.",
+      "kind": "phrase",
+      "pos": "formula di saluto",
+      "senseLabel": "saluto per rivedersi domani",
+      "translationGroup": "farewell-tomorrow",
+      "note": "Formula proposta dal madrelingua consultato dall’utente per a domani. Suba può anche significare mattina, secondo il contesto.",
+      "spellingNote": "Due parole: ba suba. Suba non richiede accenti."
+    },
+    {
+      "id": "native-ba-elleg-farewell",
+      "category": "saluti",
+      "wolof": "Ba ëllëg",
+      "italian": "Arrivederci; addio",
+      "kind": "phrase",
+      "pos": "formula di congedo",
+      "senseLabel": "congedo (uso riferito dal madrelingua)",
+      "note": "Il madrelingua consultato dall’utente riferisce un uso più vicino ad arrivederci/addio. I manuali riportano anche a domani: non considerare addio una traduzione universale né necessariamente definitiva.",
+      "spellingNote": "Mantieni ba separato da ëllëg."
+    },
+    {
+      "id": "native-nun-we",
+      "category": "persone",
+      "wolof": "ñun",
+      "italian": "noi",
+      "kind": "word",
+      "pos": "pronome personale",
+      "senseLabel": "prima persona plurale",
+      "note": "Pronome personale riferito dal madrelingua consultato dall’utente. Da distinguere da sunu, nostro, e dalle forme pronominali usate nelle costruzioni verbali.",
+      "spellingNote": "La ñ fa parte della grafia: ñun."
+    }
+  ]
+}

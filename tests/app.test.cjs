@@ -38,3 +38,14 @@ test('polysemous vocabulary always has a sense cue in translation questions',()=
  for(const id of ['muus-noun-cat','muus-quality-clever','w138','w186']){const w=api.wordById(id);assert.ok(w);const q=api.makeWordQ(w,0,'w2it');assert.ok(q.prompt.includes(w.senseLabel));assert.equal(q.answer,w.italian);}
  const choices=api.buildQuestions(null);assert.ok(choices.every(q=>data.lexicon.some(w=>w.id===q.wordId)));assert.ok(choices.every(q=>q.kind!=='pattern'&&q.kind!=='dialogue'));
 });
+
+test('documented temporal alternatives are accepted and never used as false distractors',()=>{
+ const {api,node}=boot(legacy);
+ for(const [id,alternate] of [['w086','suba'],['native-suba-tomorrow','ëllëg'],['native-ba-suba','Ba ëllëg'],['w011','Ba suba']]){
+  const w=api.wordById(id),q=api.makeWordQ(w,0,w.kind==='phrase'?'phraseTyping':'typing');assert.ok(q.answers.includes(alternate));
+  const choice=api.makeWordQ(w,0,'it2w');assert.ok(!choice.options.includes(alternate));
+  api.launch('Test','mixed',[q]);node('#typed').value=alternate;api.check();assert.equal(api.getQuiz().score,1);
+ }
+ const future=api.makeWordQ(api.wordById('native-elleg-future'),0,'w2it');assert.match(future.prompt,/accezione generale/);assert.equal(future.answer,'futuro');
+ assert.equal(api.getState().moduleBest.saluti,80);assert.ok(api.getState().wordStats.w071);
+});

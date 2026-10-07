@@ -159,7 +159,7 @@
     },
     "w011": {
       "status": "verified",
-      "binding": "1b306eaa3e24c93780a5e22ebc5588bfd3e2afbc1b28f142273106ebd1109264",
+      "binding": "e78db7edcda7b99c3b182946d71e5477d9f639fd7802d15bbef4e0d58b96cc28",
       "wolof": "Ba ëllëg",
       "italian": "A domani.",
       "evidence": [
@@ -177,7 +177,12 @@
           "excerpt": "",
           "accessNote": ""
         }
-      ]
+      ],
+      "editorialReview": {
+        "origin": "user-relayed-native-speaker",
+        "checkedOn": "2026-10-07",
+        "authorityNote": "Correzioni d’uso riferite direttamente dall’utente, attribuite a un madrelingua. Identità e varietà linguistica non dichiarate; nessuna intervista indipendente o certificazione è implicata."
+      }
     },
     "w012": {
       "status": "verified",
@@ -225,9 +230,9 @@
     },
     "w014": {
       "status": "verified",
-      "binding": "7ba144875fb55801add41880ee37af55b7865e5f504a94dafbe21bd8d6d5cec4",
+      "binding": "7ffa8e51f0ce779315dba9d51a3ffc317b8b1da7deef1ed6defbf5f366de72e6",
       "wolof": "Ba ci kanam",
-      "italian": "A presto.",
+      "italian": "A dopo.",
       "evidence": [
         {
           "sourceId": "PC-MR",
@@ -243,7 +248,12 @@
           "excerpt": "",
           "accessNote": ""
         }
-      ]
+      ],
+      "editorialReview": {
+        "origin": "user-relayed-native-speaker",
+        "checkedOn": "2026-10-07",
+        "authorityNote": "Correzioni d’uso riferite direttamente dall’utente, attribuite a un madrelingua. Identità e varietà linguistica non dichiarate; nessuna intervista indipendente o certificazione è implicata."
+      }
     },
     "w015": {
       "status": "verified",
@@ -1281,7 +1291,7 @@
     },
     "w070": {
       "status": "verified",
-      "binding": "b93754f182b60716a305ad671eef3c627bda4809065a20376d1e4f30b12199e5",
+      "binding": "191fc3ee49a11c3ceb32e3df8040bcb0868c96af5f493f56ec31b3639a68d97c",
       "wolof": "suba",
       "italian": "mattina",
       "evidence": [
@@ -1299,7 +1309,12 @@
           "excerpt": "",
           "accessNote": ""
         }
-      ]
+      ],
+      "editorialReview": {
+        "origin": "user-relayed-native-speaker",
+        "checkedOn": "2026-10-07",
+        "authorityNote": "Correzioni d’uso riferite direttamente dall’utente, attribuite a un madrelingua. Identità e varietà linguistica non dichiarate; nessuna intervista indipendente o certificazione è implicata."
+      }
     },
     "w071": {
       "status": "verified",
@@ -1601,7 +1616,7 @@
     },
     "w086": {
       "status": "verified",
-      "binding": "78f71c6e1366096afb3909c1c5a8ee56c90d22f2cd2b5904f19539d506b5bef2",
+      "binding": "4fbafea9ea266633c9b1ce91245a67270cd57f50c3ae19a0a9b7607ad85071c9",
       "wolof": "ëllëg",
       "italian": "domani",
       "evidence": [
@@ -1619,7 +1634,12 @@
           "excerpt": "ëllëg tomorrow fajar dawn prayers fan where?",
           "accessNote": ""
         }
-      ]
+      ],
+      "editorialReview": {
+        "origin": "user-relayed-native-speaker",
+        "checkedOn": "2026-10-07",
+        "authorityNote": "Correzioni d’uso riferite direttamente dall’utente, attribuite a un madrelingua. Identità e varietà linguistica non dichiarate; nessuna intervista indipendente o certificazione è implicata."
+      }
     },
     "w087": {
       "status": "pending",
@@ -14666,6 +14686,96 @@
           "documentSha256": "6e62c6b4cbb0a99a26f26895d87d563fc5b22c9ed8db9c404540bceb63dbc9dc",
           "excerpt": "Ayca!, Ayca leen! ‘Come on!’ Ndokk! ‘So much the better!’ attaaya ‘make tea’ ñeex (m) ‘broth’ balaa ‘and then’ sex ‘put in mouth’",
           "accessNote": ""
+        }
+      ]
+    },
+    "native-suba-tomorrow": {
+      "status": "verified",
+      "binding": "c74de21c37763dda91229b435592703b5552e0fb599ace2cdca7f8668cd21828",
+      "wolof": "suba",
+      "italian": "domani",
+      "evidence": [
+        {
+          "sourceId": "NATIVE-REVIEW",
+          "origin": "user-relayed-native-speaker",
+          "reviewId": "native-suba-tomorrow",
+          "sourceForm": "suba",
+          "sourceMeaning": "domani",
+          "locator": "Indicazioni riferite dall’utente, 2026-10-07",
+          "checkedOn": "2026-10-07",
+          "authorityNote": "Correzioni d’uso riferite direttamente dall’utente, attribuite a un madrelingua. Identità e varietà linguistica non dichiarate; nessuna intervista indipendente o certificazione è implicata."
+        }
+      ]
+    },
+    "native-elleg-future": {
+      "status": "verified",
+      "binding": "3fe851dbb3ba627e2ffe11e9fe07e2b06cd1290d3f2543aafd8450d46207fe52",
+      "wolof": "ëllëg",
+      "italian": "futuro",
+      "evidence": [
+        {
+          "sourceId": "NATIVE-REVIEW",
+          "origin": "user-relayed-native-speaker",
+          "reviewId": "native-elleg-future",
+          "sourceForm": "ëllëg",
+          "sourceMeaning": "futuro",
+          "locator": "Indicazioni riferite dall’utente, 2026-10-07",
+          "checkedOn": "2026-10-07",
+          "authorityNote": "Correzioni d’uso riferite direttamente dall’utente, attribuite a un madrelingua. Identità e varietà linguistica non dichiarate; nessuna intervista indipendente o certificazione è implicata."
+        }
+      ]
+    },
+    "native-ba-suba": {
+      "status": "verified",
+      "binding": "b97391956a7c4b3e068faa2f22701751c30fffad3054bc892ea66e2b1f9678d3",
+      "wolof": "Ba suba",
+      "italian": "A domani.",
+      "evidence": [
+        {
+          "sourceId": "NATIVE-REVIEW",
+          "origin": "user-relayed-native-speaker",
+          "reviewId": "native-ba-suba",
+          "sourceForm": "Ba suba",
+          "sourceMeaning": "A domani.",
+          "locator": "Indicazioni riferite dall’utente, 2026-10-07",
+          "checkedOn": "2026-10-07",
+          "authorityNote": "Correzioni d’uso riferite direttamente dall’utente, attribuite a un madrelingua. Identità e varietà linguistica non dichiarate; nessuna intervista indipendente o certificazione è implicata."
+        }
+      ]
+    },
+    "native-ba-elleg-farewell": {
+      "status": "verified",
+      "binding": "60d4b898bf5acdc38edeb9f8d491ca54efeadcd42bc9ed5c047c28a5f695a404",
+      "wolof": "Ba ëllëg",
+      "italian": "Arrivederci; addio",
+      "evidence": [
+        {
+          "sourceId": "NATIVE-REVIEW",
+          "origin": "user-relayed-native-speaker",
+          "reviewId": "native-ba-elleg-farewell",
+          "sourceForm": "Ba ëllëg",
+          "sourceMeaning": "Arrivederci; addio",
+          "locator": "Indicazioni riferite dall’utente, 2026-10-07",
+          "checkedOn": "2026-10-07",
+          "authorityNote": "Correzioni d’uso riferite direttamente dall’utente, attribuite a un madrelingua. Identità e varietà linguistica non dichiarate; nessuna intervista indipendente o certificazione è implicata."
+        }
+      ]
+    },
+    "native-nun-we": {
+      "status": "verified",
+      "binding": "66481eca546fb9056095b6ac86ac444a96858386745348fadada8417eccd1e25",
+      "wolof": "ñun",
+      "italian": "noi",
+      "evidence": [
+        {
+          "sourceId": "NATIVE-REVIEW",
+          "origin": "user-relayed-native-speaker",
+          "reviewId": "native-nun-we",
+          "sourceForm": "ñun",
+          "sourceMeaning": "noi",
+          "locator": "Indicazioni riferite dall’utente, 2026-10-07",
+          "checkedOn": "2026-10-07",
+          "authorityNote": "Correzioni d’uso riferite direttamente dall’utente, attribuite a un madrelingua. Identità e varietà linguistica non dichiarate; nessuna intervista indipendente o certificazione è implicata."
         }
       ]
     }

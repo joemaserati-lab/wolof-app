@@ -58,3 +58,18 @@ I sensi diversi di moom, weer, lal, lakk, attaaya e dëkk hanno ID distinti. La 
 Il conteggio separa 501 forme lessicali distinte, 9 sensi aggiuntivi e 46 frasi. Include locuzioni lessicali e i venti numeri già presenti; non è un conteggio dei token né una dichiarazione di completezza del dizionario. Nessun elenco di paesi o generazione automatica di numeri è stato aggiunto per raggiungere la soglia.
 
 Il manuale storico Peace Corps ospitato dal deposito governativo ERIC è stato recuperato per ulteriori confronti, ma nessuna voce è stata ammessa automaticamente da quell'edizione. I documenti integrali, le pagine Box e i token temporanei di download non vengono distribuiti nel sito o nel repository.
+
+## Correzioni del madrelingua riferite dall’utente
+
+La release 2.6.1 conserva i riscontri istituzionali e aggiunge cinque accezioni/formule in `native-review.json`. Totale attivo: 561 voci, 502 forme lessicali distinte, 513 voci non frasali e 48 frasi. Queste cinque voci sono revisioni d’uso riferite dall’utente, non cinque nuove verifiche su un manuale e non cinque nuovi lemmi distinti. Il lotto bibliografico separato di 100 forme rimane invariato.
+
+- Suba: mattina e domani hanno schede diverse; la forma resta senza accenti.
+- Ëllëg: futuro ha una nuova scheda; domani resta l’accezione documentata. Il testo estratto del dizionario, p. 53, riporta entrambi i sensi. Nessuna nuova verifica visiva di questa pagina è dichiarata: la copia PDF fornita non è più presente nel percorso originale, mentre il testo estratto è conservato localmente.
+- Ba suba: a domani, secondo l’indicazione riferita dal madrelingua.
+- Ba ëllëg: uso di congedo arrivederci/addio registrato separatamente dalla traduzione a domani del manuale. L’uso di addio non è presentato come universalmente definitivo.
+- Ba ci kanam: resa italiana aggiornata ad a dopo; l’originale See you soon resta intatto nell’evidenza.
+- Ñun: noi, pronome personale, con nuovo ID. Non viene confuso con sunu, nostro.
+
+Identità del revisore e varietà linguistica non sono state fornite; non viene inventata una certificazione indipendente. Il generatore accetta soltanto le righe esplicite del registro editoriale. Le evidenze di queste righe sono legate a ID, forma e accezione approvati; non hanno URL bibliografici fittizi. Le annotazioni mantengono gli ID storici, mentre le nuove accezioni hanno ID indipendenti. Il codice non cancella né riscrive i progressi nel localStorage.
+
+Le equivalenze temporali e di saluto sono dichiarate in gruppi espliciti: suba/domani e ëllëg/domani, Ba suba/a domani e Ba ëllëg/a domani. Non vengono proposte come distrattori false alternative che sono entrambe documentate; la scrittura libera accetta le forme del gruppo. Le domande Wolof→italiano specificano l’accezione. Non si estende automaticamente questa equivalenza ad altre parole che condividono una traduzione italiana.

@@ -13,6 +13,8 @@ def norm(s):
 
 def binding(w):
     payload={k:w.get(k) for k in ['id','wolof','italian','kind','category','pos','senseLabel','variants','examples','note','orthography']}
+    for key in ['nativeReviewId','translationGroup']:
+        if key in w:payload[key]=w[key]
     return hashlib.sha256(json.dumps(payload,sort_keys=True,ensure_ascii=False,separators=(',',':')).encode()).hexdigest()
 
 source_urls={
@@ -84,16 +86,43 @@ def generate():
         accepted.append(w)
         ledger[w['id']]={'status':'verified','binding':w['validation']['binding'],'wolof':w['wolof'],'italian':w['italian'],'evidence':w['provenance']}
 
+    native=json.loads((ROOT/'native-review.json').read_text())
+    if native.get('schemaVersion')!=1 or native.get('origin')!='user-relayed-native-speaker':raise ValueError('Unrecognised editorial review origin')
+    for change in native['annotations']:
+        w=next((e for e in accepted if e['id']==change['id']),None)
+        if not w:raise ValueError('Editorial annotation points to unpublished ID')
+        for key in ('italian','senseLabel','translationGroup','note'):
+            if key in change:w[key]=change[key]
+        w['meanings']=w['italian'].split('; ')
+        w['editorialReview']={'origin':native['origin'],'checkedOn':native['checkedOn'],'authorityNote':native['authorityNote']}
+        approved={k:copy.deepcopy(w.get(k)) for k in ['id','wolof','italian','kind','category','senseLabel','variants','examples','meanings','pos','note','orthography']}
+        if 'translationGroup' in w:approved['translationGroup']=w['translationGroup']
+        w['validation']={'status':'verified','binding':binding(w),'approved':approved,'evidence':w['provenance']}
+        ledger[w['id']]={'status':'verified','binding':w['validation']['binding'],'wolof':w['wolof'],'italian':w['italian'],'evidence':w['provenance'],'editorialReview':w['editorialReview']}
+    for entry in native['entries']:
+        w=copy.deepcopy(entry)
+        if any(e['id']==w['id'] for e in candidates+accepted):raise ValueError('Duplicate editorial ID')
+        w.update({'source':'NATIVE-REVIEW','ref':'Revisione riferita dall’utente · 7 ottobre 2026','variants':[],'examples':[],'candidateOrigin':'native-review','meanings':w['italian'].split('; '),'orthography':{'canonical':w['wolof'],'note':w.pop('spellingNote')},'nativeReviewId':w['id']})
+        evidence={'sourceId':'NATIVE-REVIEW','origin':native['origin'],'reviewId':w['nativeReviewId'],'sourceForm':w['wolof'],'sourceMeaning':w['italian'],'locator':'Indicazioni riferite dall’utente, 2026-10-07','checkedOn':native['checkedOn'],'authorityNote':native['authorityNote']}
+        w['provenance']=[evidence]
+        approved={k:copy.deepcopy(w.get(k)) for k in ['id','wolof','italian','kind','category','senseLabel','variants','examples','meanings','pos','note','orthography']}
+        approved.update({'nativeReviewId':w['nativeReviewId'],'nativeEvidence':copy.deepcopy(evidence)})
+        if 'translationGroup' in w:approved['translationGroup']=w['translationGroup']
+        w['validation']={'status':'verified','binding':binding(w),'approved':approved,'evidence':[evidence]}
+        accepted.append(w);candidates.append(entry)
+        ledger[w['id']]={'status':'verified','binding':w['validation']['binding'],'wolof':w['wolof'],'italian':w['italian'],'evidence':[evidence]}
+
     # Every example has to be a separately approved complete phrase.
     # None are auto-linked to avoid reintroducing pending phrases or wrong senses.
     data['lexicon']=accepted
     data['patterns']=[]
-    data['app']['version']='2.6.0'
+    data['app']['version']='2.6.1'
     data['app']['method']='Solo voci con forma e significato controllati su fonti istituzionali; esercizi con contesto per i significati multipli.'
     data['validationPolicy']={'required':True,'schemaVersion':1,'reviewedOn':'2026-10-07','pendingCount':len(rejected),'candidateCount':len(candidates)}
     data['sources'].append({'id':'LLACAN-QUAL','name':'La qualification en wolof — exemple 25','publisher':'LLACAN / CNRS','type':'Studio linguistico accademico','usage':'Distinzione dei significati di muus e mboq','url':source_urls['LLACAN-QUAL'],'note':'L’estratto accademico indicizzato distingue muus nominale (chat) e verbale (être rusé). L’endpoint originale non è attualmente accessibile; nessuna certificazione madrelingua è implicata.'})
     data['sources']=[s for s in data['sources'] if s['id']!='UCLA-COURSE']
     data['sources'].append({'id':'UCLA-COURSE','name':'Wolof Online Course','publisher':'University of California, Los Angeles','type':'Corso universitario con glossari e lezioni','url':'https://aflang.humanities.ucla.edu/language-courses/wolof/','usage':'Riscontro puntuale di forma e significato; pagina del PDF e impronta del documento conservate.'})
+    data['sources'].append({'id':'NATIVE-REVIEW','name':'Revisione madrelingua riferita dall’utente','publisher':'Indicazioni riferite dall’utente','type':'Revisione editoriale d’uso','usage':'Accezioni e saluti indicati dal madrelingua consultato dall’utente','note':native['authorityNote']})
     for m in data['modules']:
         group=[w for w in accepted if w['category']==m['id']]
         m['wordCount']=sum(w['kind']!='phrase' for w in group);m['phraseCount']=sum(w['kind']=='phrase' for w in group)

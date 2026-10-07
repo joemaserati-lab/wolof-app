@@ -32,7 +32,8 @@
  function isValidated(w){
   const v=w.validation;if(v?.status!=='verified'||!v.approved||!/^[a-f0-9]{64}$/.test(v.binding||'')||!v.evidence?.length)return false;
   for(const k of ['id','wolof','italian','kind','category','senseLabel','variants','examples','meanings','pos','note','orthography'])if(JSON.stringify(w[k]??null)!==JSON.stringify(v.approved[k]??null))return false;
-  return v.evidence.some(e=>{try{return ['lgidf.cnrs.fr','files.peacecorps.gov','www.llacan.cnrs.fr','ucla.app.box.com'].includes(new URL(e.url).hostname)&&e.sourceMeaning&&e.locator&&normalize(e.sourceForm)===normalize(w.wolof);}catch{return false;}});
+  for(const k of ['nativeReviewId','translationGroup'])if(k in v.approved&&JSON.stringify(w[k])!==JSON.stringify(v.approved[k]))return false;
+  return v.evidence.some(e=>{try{if(e.sourceId==='NATIVE-REVIEW')return w.source==='NATIVE-REVIEW'&&e.origin==='user-relayed-native-speaker'&&e.reviewId===w.nativeReviewId&&JSON.stringify(e)===JSON.stringify(v.approved.nativeEvidence)&&e.sourceMeaning===w.italian&&normalize(e.sourceForm)===normalize(w.wolof);return ['lgidf.cnrs.fr','files.peacecorps.gov','www.llacan.cnrs.fr','ucla.app.box.com'].includes(new URL(e.url).hostname)&&e.sourceMeaning&&e.locator&&normalize(e.sourceForm)===normalize(w.wolof);}catch{return false;}});
  }
  function formats(w){return w.kind!=='phrase'?['w2it','it2w','typing',...(w.examples.length?['context']:[])]:['w2it','it2w','cloze','reorder',...(!/[\/…]/.test(w.wolof)?['phraseTyping']:[])];}
  function chooseFormat(w,history,recent=[]){const available=formats(w);return available.find(x=>x!==history?.lastFormat&&!recent.slice(-2).includes(x))||available.find(x=>x!==history?.lastFormat)||available[0];}

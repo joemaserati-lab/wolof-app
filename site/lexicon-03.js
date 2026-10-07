@@ -315,7 +315,7 @@ window.WOLOF_PACKS.push({
       "ref": "PDF p. 5",
       "kind": "word",
       "variants": [],
-      "note": "",
+      "note": "Suba, scritto senza accenti, può indicare mattina o domani secondo il contesto. Le due accezioni hanno schede separate.",
       "candidateOrigin": "legacy",
       "meanings": [
         "mattina"
@@ -344,7 +344,7 @@ window.WOLOF_PACKS.push({
       ],
       "validation": {
         "status": "verified",
-        "binding": "b93754f182b60716a305ad671eef3c627bda4809065a20376d1e4f30b12199e5",
+        "binding": "191fc3ee49a11c3ceb32e3df8040bcb0868c96af5f493f56ec31b3639a68d97c",
         "approved": {
           "id": "w070",
           "wolof": "suba",
@@ -358,7 +358,7 @@ window.WOLOF_PACKS.push({
             "mattina"
           ],
           "pos": null,
-          "note": "",
+          "note": "Suba, scritto senza accenti, può indicare mattina o domani secondo il contesto. Le due accezioni hanno schede separate.",
           "orthography": {
             "canonical": "suba",
             "note": ""
@@ -380,6 +380,11 @@ window.WOLOF_PACKS.push({
             "accessNote": ""
           }
         ]
+      },
+      "editorialReview": {
+        "origin": "user-relayed-native-speaker",
+        "checkedOn": "2026-10-07",
+        "authorityNote": "Correzioni d’uso riferite direttamente dall’utente, attribuite a un madrelingua. Identità e varietà linguistica non dichiarate; nessuna intervista indipendente o certificazione è implicata."
       }
     },
     {
@@ -1379,12 +1384,12 @@ window.WOLOF_PACKS.push({
       "ref": "video-vocabulary, PDF p. 2",
       "kind": "word",
       "variants": [],
-      "note": "",
+      "note": "Il testo estratto di Ay Baati Wolof, p. 53, riporta domani e futuro. La correzione riferita dal madrelingua evidenzia futuro; questa accezione ha una scheda separata. Non ridurre la parola a un’unica traduzione.",
       "candidateOrigin": "legacy",
       "meanings": [
         "domani"
       ],
-      "senseLabel": "tempo",
+      "senseLabel": "giorno successivo a oggi (accezione documentata)",
       "examples": [],
       "orthography": {
         "canonical": "ëllëg",
@@ -1408,25 +1413,26 @@ window.WOLOF_PACKS.push({
       ],
       "validation": {
         "status": "verified",
-        "binding": "78f71c6e1366096afb3909c1c5a8ee56c90d22f2cd2b5904f19539d506b5bef2",
+        "binding": "4fbafea9ea266633c9b1ce91245a67270cd57f50c3ae19a0a9b7607ad85071c9",
         "approved": {
           "id": "w086",
           "wolof": "ëllëg",
           "italian": "domani",
           "kind": "word",
           "category": "numeri_tempo",
-          "senseLabel": "tempo",
+          "senseLabel": "giorno successivo a oggi (accezione documentata)",
           "variants": [],
           "examples": [],
           "meanings": [
             "domani"
           ],
           "pos": null,
-          "note": "",
+          "note": "Il testo estratto di Ay Baati Wolof, p. 53, riporta domani e futuro. La correzione riferita dal madrelingua evidenzia futuro; questa accezione ha una scheda separata. Non ridurre la parola a un’unica traduzione.",
           "orthography": {
             "canonical": "ëllëg",
             "note": ""
-          }
+          },
+          "translationGroup": "time-tomorrow"
         },
         "evidence": [
           {
@@ -1444,6 +1450,12 @@ window.WOLOF_PACKS.push({
             "accessNote": ""
           }
         ]
+      },
+      "translationGroup": "time-tomorrow",
+      "editorialReview": {
+        "origin": "user-relayed-native-speaker",
+        "checkedOn": "2026-10-07",
+        "authorityNote": "Correzioni d’uso riferite direttamente dall’utente, attribuite a un madrelingua. Identità e varietà linguistica non dichiarate; nessuna intervista indipendente o certificazione è implicata."
       }
     },
     {

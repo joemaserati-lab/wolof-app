@@ -469,12 +469,12 @@ window.WOLOF_PACKS.push({
       "ref": "PDF p. 13",
       "kind": "phrase",
       "variants": [],
-      "note": "",
+      "note": "Il manuale traduce questa formula come a domani. Il madrelingua consultato dall’utente la usa più come arrivederci/addio: vedi la scheda di congedo. Per a domani propone Ba suba. L’uso dipende dal contesto.",
       "candidateOrigin": "legacy",
       "meanings": [
         "A domani."
       ],
-      "senseLabel": "saluto",
+      "senseLabel": "saluto per rivedersi il giorno successivo",
       "examples": [],
       "orthography": {
         "canonical": "Ba ëllëg",
@@ -498,25 +498,26 @@ window.WOLOF_PACKS.push({
       ],
       "validation": {
         "status": "verified",
-        "binding": "1b306eaa3e24c93780a5e22ebc5588bfd3e2afbc1b28f142273106ebd1109264",
+        "binding": "e78db7edcda7b99c3b182946d71e5477d9f639fd7802d15bbef4e0d58b96cc28",
         "approved": {
           "id": "w011",
           "wolof": "Ba ëllëg",
           "italian": "A domani.",
           "kind": "phrase",
           "category": "saluti",
-          "senseLabel": "saluto",
+          "senseLabel": "saluto per rivedersi il giorno successivo",
           "variants": [],
           "examples": [],
           "meanings": [
             "A domani."
           ],
           "pos": null,
-          "note": "",
+          "note": "Il manuale traduce questa formula come a domani. Il madrelingua consultato dall’utente la usa più come arrivederci/addio: vedi la scheda di congedo. Per a domani propone Ba suba. L’uso dipende dal contesto.",
           "orthography": {
             "canonical": "Ba ëllëg",
             "note": ""
-          }
+          },
+          "translationGroup": "farewell-tomorrow"
         },
         "evidence": [
           {
@@ -534,6 +535,12 @@ window.WOLOF_PACKS.push({
             "accessNote": ""
           }
         ]
+      },
+      "translationGroup": "farewell-tomorrow",
+      "editorialReview": {
+        "origin": "user-relayed-native-speaker",
+        "checkedOn": "2026-10-07",
+        "authorityNote": "Correzioni d’uso riferite direttamente dall’utente, attribuite a un madrelingua. Identità e varietà linguistica non dichiarate; nessuna intervista indipendente o certificazione è implicata."
       }
     },
     {
@@ -692,17 +699,17 @@ window.WOLOF_PACKS.push({
       "id": "w014",
       "category": "saluti",
       "wolof": "Ba ci kanam",
-      "italian": "A presto.",
+      "italian": "A dopo.",
       "source": "PC-MR",
       "ref": "PDF p. 13",
       "kind": "phrase",
       "variants": [],
-      "note": "",
+      "note": "Resa italiana corretta in a dopo secondo la revisione riferita dall’utente. La citazione originale del manuale resta See you soon; non è stata riscritta.",
       "candidateOrigin": "legacy",
       "meanings": [
-        "A presto."
+        "A dopo."
       ],
-      "senseLabel": "saluto",
+      "senseLabel": "saluto per rivedersi più tardi",
       "examples": [],
       "orthography": {
         "canonical": "Ba ci kanam",
@@ -726,21 +733,21 @@ window.WOLOF_PACKS.push({
       ],
       "validation": {
         "status": "verified",
-        "binding": "7ba144875fb55801add41880ee37af55b7865e5f504a94dafbe21bd8d6d5cec4",
+        "binding": "7ffa8e51f0ce779315dba9d51a3ffc317b8b1da7deef1ed6defbf5f366de72e6",
         "approved": {
           "id": "w014",
           "wolof": "Ba ci kanam",
-          "italian": "A presto.",
+          "italian": "A dopo.",
           "kind": "phrase",
           "category": "saluti",
-          "senseLabel": "saluto",
+          "senseLabel": "saluto per rivedersi più tardi",
           "variants": [],
           "examples": [],
           "meanings": [
-            "A presto."
+            "A dopo."
           ],
           "pos": null,
-          "note": "",
+          "note": "Resa italiana corretta in a dopo secondo la revisione riferita dall’utente. La citazione originale del manuale resta See you soon; non è stata riscritta.",
           "orthography": {
             "canonical": "Ba ci kanam",
             "note": ""
@@ -762,6 +769,11 @@ window.WOLOF_PACKS.push({
             "accessNote": ""
           }
         ]
+      },
+      "editorialReview": {
+        "origin": "user-relayed-native-speaker",
+        "checkedOn": "2026-10-07",
+        "authorityNote": "Correzioni d’uso riferite direttamente dall’utente, attribuite a un madrelingua. Identità e varietà linguistica non dichiarate; nessuna intervista indipendente o certificazione è implicata."
       }
     },
     {

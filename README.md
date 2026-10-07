@@ -35,3 +35,5 @@ Il workflow valida il registro, i test, la sintassi e gli asset PWA prima del de
 ## Nuova revisione delle fonti
 
 Il lotto 01 contiene 100 forme lessicali e 101 sensi selezionati da Ay Baati Wolof, con pagina e impronta della copia fornita. Si consulta in [Revisione del corpus](site/revisione-corpus.html). È separato dalle lezioni; non incrementa le 556 voci attive e non sostituisce la revisione completa delle tre fonti scelte. Vedi [criteri e stato](CORPUS-VALIDATION.md).
+
+La release 2.6.1 aggiunge cinque accezioni/formule da revisioni d’uso riferite dall’utente: 561 voci attive, 502 forme lessicali distinte. Le accezioni di suba e ëllëg sono separate, i saluti riportano il contesto e ñun è disponibile. Vedi native-review.json; nessuna citazione dei manuali è riscritta come se provenisse dal madrelingua.

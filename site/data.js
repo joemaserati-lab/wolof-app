@@ -1,7 +1,7 @@
 window.WOLOF_DATA = {
   "app": {
     "name": "Njàng Wolof",
-    "version": "2.6.0",
+    "version": "2.6.1",
     "language": "it",
     "method": "Solo voci con forma e significato controllati su fonti istituzionali; esercizi con contesto per i significati multipli.",
     "target": "Costruire un lessico pratico ampio prima di aumentare la complessità grammaticale."
@@ -77,6 +77,14 @@ window.WOLOF_DATA = {
       "type": "Corso universitario con glossari e lezioni",
       "url": "https://aflang.humanities.ucla.edu/language-courses/wolof/",
       "usage": "Riscontro puntuale di forma e significato; pagina del PDF e impronta del documento conservate."
+    },
+    {
+      "id": "NATIVE-REVIEW",
+      "name": "Revisione madrelingua riferita dall’utente",
+      "publisher": "Indicazioni riferite dall’utente",
+      "type": "Revisione editoriale d’uso",
+      "usage": "Accezioni e saluti indicati dal madrelingua consultato dall’utente",
+      "note": "Correzioni d’uso riferite direttamente dall’utente, attribuite a un madrelingua. Identità e varietà linguistica non dichiarate; nessuna intervista indipendente o certificazione è implicata."
     }
   ],
   "modules": [
@@ -89,7 +97,7 @@ window.WOLOF_DATA = {
       "icon": "☀",
       "goal": "Gestire i primi 60 secondi di una conversazione.",
       "wordCount": 24,
-      "phraseCount": 28
+      "phraseCount": 30
     },
     {
       "id": "persone",
@@ -99,7 +107,7 @@ window.WOLOF_DATA = {
       "subtitle": "Pronomi, parentela, persone e professioni",
       "icon": "◉",
       "goal": "Presentare te stesso e capire di chi si parla.",
-      "wordCount": 45,
+      "wordCount": 46,
       "phraseCount": 0
     },
     {
@@ -110,7 +118,7 @@ window.WOLOF_DATA = {
       "subtitle": "1–20, giorni, momenti della giornata, oggi e domani",
       "icon": "12",
       "goal": "Capire quantità, appuntamenti e riferimenti temporali.",
-      "wordCount": 67,
+      "wordCount": 69,
       "phraseCount": 13
     },
     {
@@ -198,7 +206,7 @@ window.WOLOF_DATA = {
     "schemaVersion": 1,
     "reviewedOn": "2026-10-07",
     "pendingCount": 406,
-    "candidateCount": 962
+    "candidateCount": 967
   },
   "lexiconFiles": [
     "lexicon-01.js",

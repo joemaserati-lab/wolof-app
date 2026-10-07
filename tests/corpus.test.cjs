@@ -31,7 +31,7 @@ test('every UCLA approval binds the exact reviewed sense, including homonyms',()
  const documents=new Map(read('institutional-source-manifest.json').map(d=>[d.url,d]));
  for(const a of read('institutional-approvals.json')){
   const w=D.lexicon.find(w=>w.id===a.candidateId);assert.ok(w,a.candidateId);
-  assert.equal(w.italian,a.italian);assert.equal(w.senseLabel,a.senseLabel);
+  assert.equal(w.italian,a.italian);const annotation=read('native-review.json').annotations.find(c=>c.id===w.id);assert.equal(w.senseLabel,annotation?.senseLabel||a.senseLabel);
   const e=w.validation.evidence[0];assert.equal(e.sourceId,'UCLA-COURSE');assert.equal(e.documentSha256,documents.get(e.url).sha256);
   assert.ok(e.excerpt.toLowerCase().includes(e.sourceForm.toLowerCase()));
  }
@@ -41,4 +41,13 @@ test('every UCLA approval binds the exact reviewed sense, including homonyms',()
  assert.equal(D.lexicon.find(w=>w.wolof==='ginnaaw').italian,'schiena');
  assert.equal(D.lexicon.find(w=>w.wolof==='gannaaw').italian,'dopo');
  assert.ok(D.lexicon.some(w=>w.wolof==='am xel'&&w.italian==='essere intelligente'));
+});
+
+test('native editorial senses are scoped and leave institutional quotations intact',()=>{
+ const ids=['native-suba-tomorrow','native-elleg-future','native-ba-suba','native-ba-elleg-farewell','native-nun-we'];
+ for(const id of ids){const w=D.lexicon.find(w=>w.id===id);assert.ok(w);assert.equal(w.source,'NATIVE-REVIEW');assert.ok(L.isValidated(w));const fake=JSON.parse(JSON.stringify(w));fake.validation.evidence[0].sourceMeaning='inventato';assert.ok(!L.isValidated(fake));}
+ assert.equal(D.lexicon.find(w=>w.id==='w070').italian,'mattina');assert.equal(D.lexicon.find(w=>w.id==='native-suba-tomorrow').italian,'domani');
+ assert.equal(D.lexicon.find(w=>w.id==='w086').italian,'domani');assert.equal(D.lexicon.find(w=>w.id==='native-elleg-future').italian,'futuro');
+ assert.equal(D.lexicon.find(w=>w.id==='w014').italian,'A dopo.');assert.equal(D.lexicon.find(w=>w.id==='w014').provenance[0].sourceMeaning,'See you soon');
+ assert.equal(D.lexicon.find(w=>w.id==='native-nun-we').wolof,'ñun');assert.equal(D.lexicon.find(w=>w.id==='native-nun-we').italian,'noi');
 });
