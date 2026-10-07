@@ -4,7 +4,21 @@ Le 654 voci della release precedente sono conservate in `corpus-candidates.json`
 
 La revisione del 7 ottobre 2026 pubblica 556 voci: 501 forme lessicali distinte, 9 sensi aggiuntivi e 46 frasi. Esclude 406 candidate. Le voci escluse restano archiviate con ID stabili; i progressi nel browser non vengono eliminati. Otto voci presentano divergenze da chiarire; le altre attendono una conferma puntuale. L'assenza di una conferma non dimostra che una parola sia errata.
 
-## Criterio di ammissione
+## Revisione sulle fonti scelte dal proprietario
+
+È in corso una nuova revisione basata esclusivamente su `Ay Baati Wolof` (Munro e Gaye, UCLA 1997, copia PDF fornita), `Aay Naa ci Wolof!` (Peace Corps Senegal, 2012) e `Wolof Grammar` (Peace Corps/The Gambia, copia PDF fornita). Questo nuovo criterio non è ancora applicato a tutte le 556 voci della release attiva: non vanno presentate come interamente riconvalidate sui tre testi.
+
+Il primo lotto, `review/batch-01.tsv` e `site/review-batch-01.json`, documenta **100 forme lessicali distinte e 101 sensi selezionati**. È un intake prevalentemente alfabetico relativo alle voci A del dizionario, con controlli aggiuntivi su bëccëg, bëgg e muus; non è un sillabo bilanciato per principianti. È consultabile in `site/revisione-corpus.html` ma non viene caricato nelle lezioni e non aumenta il conteggio attivo. Il target rimane 500 forme, preferibilmente 1.000. Il corpus attivo rimane disponibile durante la revisione per evitare di svuotare prematuramente i moduli.
+
+Forme e definizioni selezionate sono state confrontate visivamente con le scansioni del dizionario. Ogni record conserva pagina stampata, pagina PDF, SHA-256 del documento, parte del discorso e significato originale selezionato. L'italiano è un adattamento editoriale, non una certificazione di un revisore bilingue. Le grafie della fonte (incluse vocali doppie accentate e prestiti) non sono normalizzate automaticamente. Altre accezioni non selezionate e varianti non revisionate non vengono importate.
+
+**Muus:** Ay Baati Wolof, p. stampata 119 / PDF 139, attesta `muus` come nome “cat” e come verbo “to be wise, intelligent, smart”. Quindi il senso intellettuale è documentato; la precedente quarantena del generico “intelligente” non dimostra l'invalidità di quel significato. Nome e verbo devono restare separati nei quiz e nella migrazione. Il dizionario attesta anche `am xel`, p. 5 / PDF 25. Riscontri secondari: Wolof Grammar p. PDF 70 (“muus - cat”) e p. PDF 65 (“am xel - to be smart, to be brainy”).
+
+La lista `existingFormIds` è soltanto un collegamento alle forme storiche: non autorizza a riutilizzare il progresso di un'accezione per un'altra. Nessun PDF completo, scansione o percorso personale è pubblicato nel repository. Il catalogo bibliografico UCLA viene collegato come catalogo, senza fingere che il vecchio endpoint del PDF sia accessibile.
+
+`python3 build-review-batch.py --check` verifica che il JSON corrisponda esattamente alle righe revisionate. Il build non modifica i pacchetti attivi, `validation-ledger.json` o localStorage. Il confronto con la fonte rimane un lavoro editoriale; i test verificano la struttura e la coerenza del registro, non la correttezza linguistica universale.
+
+## Criterio della release attiva precedente
 
 1. Consultare una voce o un passo preciso di una fonte istituzionale: lessico CNRS/LGIDF, studio LLACAN/CNRS, documento governativo Peace Corps nel suo dominio ufficiale, oppure il corso universitario UCLA nel deposito collegato dal portale ufficiale.
 2. Verificare separatamente forma scritta, significato e uso. Una citazione generica, una traduzione automatica, la somiglianza tra parole o il solo nome della fonte non costituiscono approvazione.

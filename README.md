@@ -31,3 +31,7 @@ La chiave `njang-wolof-v2`, gli ID conservati e i progressi locali restano dispo
 ## Pubblicazione
 
 Il workflow valida il registro, i test, la sintassi e gli asset PWA prima del deploy. Per una nuova release incrementare le versioni degli asset e il nome della cache offline.
+
+## Nuova revisione delle fonti
+
+Il lotto 01 contiene 100 forme lessicali e 101 sensi selezionati da Ay Baati Wolof, con pagina e impronta della copia fornita. Si consulta in [Revisione del corpus](site/revisione-corpus.html). È separato dalle lezioni; non incrementa le 556 voci attive e non sostituisce la revisione completa delle tre fonti scelte. Vedi [criteri e stato](CORPUS-VALIDATION.md).

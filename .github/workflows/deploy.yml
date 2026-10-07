@@ -21,6 +21,7 @@ jobs:
       - name: Validate learning and legacy progress
         run: |
           python3 validate-corpus.py --check
+          python3 build-review-batch.py --check
           node --test tests/*.test.cjs
           for file in site/*.js; do node --check "$file"; done
           python3 - <<'CHECK'
