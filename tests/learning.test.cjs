@@ -1,7 +1,8 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
 const L=require('../site/learning.js');
 const context={window:{}};vm.runInNewContext(fs.readFileSync(__dirname+'/../site/data.js','utf8'),context);
-const D=L.enrich(context.window.WOLOF_DATA);
+for(const f of ['lexicon-packs.js',...context.window.WOLOF_DATA.lexiconFiles])vm.runInNewContext(fs.readFileSync(__dirname+'/../site/'+f,'utf8'),context);
+const D=L.enrich(context.window.WOLOF_DATA,context.window.WOLOF_PACKS);
 test('orthography preserves meaning credit without marking answers fully correct',()=>{
  assert.equal(L.grade('becceg',['bëccëg']).credit,.5);
  assert.match(L.grade('becceg',['bëccëg']).feedback,/ë/);

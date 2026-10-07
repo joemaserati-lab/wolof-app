@@ -1,0 +1,418 @@
+# document|page|form|Italian|category|kind|sense label
+video-vocabulary|1|Àjjuma|venerdì|numeri_tempo|word|giorno della settimana
+video-vocabulary|1|Àllarba|mercoledì|numeri_tempo|word|giorno della settimana
+video-vocabulary|1|Altine|lunedì|numeri_tempo|word|giorno della settimana
+video-vocabulary|1|Alxames|giovedì|numeri_tempo|word|giorno della settimana
+video-vocabulary|1|alxuraan|Corano|casa_oggetti|word|testo religioso
+video-vocabulary|1|anaangoo|maglia aderente|casa_oggetti|word|abbigliamento
+video-vocabulary|1|armuwaar|armadio|casa_oggetti|word|mobile
+video-vocabulary|1|Aseer|sabato|numeri_tempo|word|giorno della settimana
+video-vocabulary|1|at|anno|numeri_tempo|word|tempo
+video-vocabulary|1|àttaaya|tè|cibo|word|bevanda
+video-vocabulary|1|ba beneen|a un'altra volta|saluti|phrase|congedo
+video-vocabulary|1|ba beneen yoon|alla prossima|saluti|phrase|congedo
+video-vocabulary|1|ba subë|a domattina|saluti|phrase|congedo
+video-vocabulary|1|ba bët set|a domattina|saluti|phrase|congedo
+video-vocabulary|1|ba ëllëg|a domani|saluti|phrase|congedo
+video-vocabulary|1|ba jant fenk|fino all'alba|numeri_tempo|phrase|tempo
+video-vocabulary|1|ba jant so|fino al tramonto|numeri_tempo|phrase|tempo
+video-vocabulary|1|ba ni tuuti|a fra poco|saluti|phrase|congedo
+video-vocabulary|1|ci kanam tuuti|fra poco|numeri_tempo|phrase|tempo
+video-vocabulary|1|bàjjan|zia paterna|persone|word|parentela
+video-vocabulary|1|balaa|prima|numeri_tempo|word|tempo
+video-vocabulary|1|baraada|teiera|casa_oggetti|word|utensile
+video-vocabulary|1|bataaxal|lettera|casa_oggetti|word|corrispondenza
+video-vocabulary|1|bëccëg|giorno; ore di luce|numeri_tempo|word|tempo
+video-vocabulary|1|bees|essere nuovo|casa_oggetti|word|qualità
+video-vocabulary|1|benn|uno|numeri_tempo|word|numero
+video-vocabulary|1|bërkaati-démb|tre giorni fa|numeri_tempo|word|tempo
+video-vocabulary|1|bërki-démb|l'altro ieri|numeri_tempo|word|tempo
+video-vocabulary|1|bërset|alba|numeri_tempo|word|tempo
+video-vocabulary|1|bés|giorno|numeri_tempo|word|tempo
+video-vocabulary|1|biig|ieri notte|numeri_tempo|word|tempo
+video-vocabulary|1|biir|addome; pancia|salute_emozioni|word|parte del corpo
+video-vocabulary|1|bind|scrivere|azioni|word|azione
+video-vocabulary|1|biti|esterno|luoghi_direzioni|word|posizione
+video-vocabulary|1|bokk|condividere|azioni|word|azione
+video-vocabulary|2|borom|proprietario|persone|word|persona
+video-vocabulary|2|borom kër|capofamiglia|persone|word|ruolo familiare
+video-vocabulary|2|boyet|scatola|casa_oggetti|word|oggetto
+video-vocabulary|2|bu jant bi fenkee|quando sorge il sole|numeri_tempo|phrase|tempo
+video-vocabulary|2|bu jant bi sowee|quando tramonta il sole|numeri_tempo|phrase|tempo
+video-vocabulary|2|bu sobee Yàlla|se Dio vuole|saluti|phrase|formula
+video-vocabulary|2|bu weer wi deewee|alla fine del mese|numeri_tempo|phrase|tempo
+video-vocabulary|2|bukki|iena|meteo|word|animale
+video-vocabulary|2|buló|essere blu|mercato|word|colore
+video-vocabulary|2|butéél|bottiglia|casa_oggetti|word|contenitore
+video-vocabulary|2|butig|negozio|mercato|word|luogo
+video-vocabulary|2|caat|fratello o sorella più giovane della famiglia|persone|word|parentela
+video-vocabulary|2|caq|collana di perline o pietre|casa_oggetti|word|gioiello
+video-vocabulary|2|cat|bordo|luoghi_direzioni|word|posizione
+video-vocabulary|2|ceen|catena metallica|casa_oggetti|word|oggetto
+video-vocabulary|2|ci kanam|più tardi|numeri_tempo|phrase|tempo
+video-vocabulary|2|ci loo nekk|che succede?|saluti|phrase|saluto informale
+video-vocabulary|2|ci saa si|subito|numeri_tempo|phrase|tempo
+video-vocabulary|2|daaw|l'anno scorso|numeri_tempo|word|tempo
+video-vocabulary|2|daaw jéég|due anni fa|numeri_tempo|phrase|tempo
+video-vocabulary|2|daawaati jéég|tre anni fa|numeri_tempo|phrase|tempo
+video-vocabulary|2|dara|niente|saluti|word|quantità nulla
+video-vocabulary|2|dëkk|abitare; risiedere|azioni|word|azione
+video-vocabulary|2|delloo|dare il resto|mercato|word|pagamento
+video-vocabulary|2|dem|andare|azioni|word|azione
+video-vocabulary|2|démb|ieri|numeri_tempo|word|tempo
+video-vocabulary|2|dërëm|unità monetaria pari a cinque franchi CFA|mercato|word|denaro
+video-vocabulary|2|déwén|l'anno prossimo|numeri_tempo|word|tempo
+video-vocabulary|2|Dibéér|domenica|numeri_tempo|word|giorno della settimana
+video-vocabulary|2|diggënte|mezzo; parte centrale|luoghi_direzioni|word|posizione
+video-vocabulary|2|diggu bëccëg|mezzogiorno|numeri_tempo|word|tempo
+video-vocabulary|2|doom|figlio o figlia di qualcuno|persone|word|parentela: non un bambino generico
+video-vocabulary|2|doree|essere dorato|mercato|word|colore
+video-vocabulary|2|dox|camminare|azioni|word|azione
+video-vocabulary|2|dugg|entrare|azioni|word|azione
+video-vocabulary|2|ëllëg|domani|numeri_tempo|word|tempo
+video-vocabulary|2|fajar|preghiera dell'alba|numeri_tempo|word|preghiera
+video-vocabulary|2|fan|dove?|luoghi_direzioni|word|domanda
+video-vocabulary|2|fëgg|bussare|azioni|word|azione
+video-vocabulary|2|fey|pagare|mercato|word|azione
+video-vocabulary|3|firisideer|frigorifero|casa_oggetti|word|elettrodomestico
+video-vocabulary|3|futbal|calcio|azioni|word|sport
+video-vocabulary|3|futbalkat|calciatore|persone|word|professione
+video-vocabulary|3|gannaaw|dopo|numeri_tempo|word|tempo: diverso da ginnaaw, schiena
+video-vocabulary|3|gannaaw ëllëg|dopodomani|numeri_tempo|phrase|tempo
+video-vocabulary|3|gannaawaati ëllëg|fra tre giorni|numeri_tempo|phrase|tempo
+video-vocabulary|3|gee|preghiera della sera|numeri_tempo|word|preghiera
+video-vocabulary|3|génn|uscire|azioni|word|azione
+video-vocabulary|3|ginnaaw|schiena|salute_emozioni|word|parte del corpo: diverso da gannaaw, dopo
+video-vocabulary|3|giri|essere grigio|mercato|word|colore
+video-vocabulary|3|guddi|notte|numeri_tempo|word|tempo
+video-vocabulary|3|inshalla|se Dio vuole|saluti|word|formula dall'arabo
+video-vocabulary|3|it|anche|saluti|word|avverbio
+video-vocabulary|3|jaaro baaram|anello|casa_oggetti|word|gioiello
+video-vocabulary|3|jaaro nopp|orecchini|casa_oggetti|word|gioiello
+video-vocabulary|3|jafe|essere caro|mercato|word|prezzo
+video-vocabulary|3|jàmm|pace|saluti|word|condizione
+video-vocabulary|3|jàmm nga yendoo?|come è andata la giornata?|saluti|phrase|saluto
+video-vocabulary|3|jàng|leggere; studiare; imparare|azioni|word|azione
+video-vocabulary|3|jàngalekat|insegnante|persone|word|professione
+video-vocabulary|3|jànq|giovane donna|persone|word|persona
+video-vocabulary|3|jëkkër|marito|persone|word|parentela
+video-vocabulary|3|jël|prendere|azioni|word|azione
+video-vocabulary|3|jógé|provenire da|azioni|word|origine
+video-vocabulary|3|jox|dare|azioni|word|azione
+video-vocabulary|3|kanam|viso; parte davanti|salute_emozioni|word|parte del corpo e posizione
+video-vocabulary|3|kaw|parte superiore|luoghi_direzioni|word|posizione
+video-vocabulary|3|keneen|un'altra persona|persone|word|persona
+video-vocabulary|3|keroog|recentemente|numeri_tempo|word|tempo
+video-vocabulary|3|këyit|carta; foglio|casa_oggetti|word|oggetto
+video-vocabulary|3|kontuwaar|bancone|mercato|word|arredo
+video-vocabulary|3|kook|cucchiaio ricavato da una zucca|casa_oggetti|word|utensile
+video-vocabulary|3|koppati|piccolo cappello rotondo da uomo|casa_oggetti|word|abbigliamento
+video-vocabulary|3|koti|granchio|cibo|word|animale
+video-vocabulary|3|lam|braccialetto|casa_oggetti|word|gioiello
+video-vocabulary|3|lan|che cosa?|saluti|word|domanda
+video-vocabulary|3|léégi|adesso|numeri_tempo|word|tempo
+video-vocabulary|3|leket|calabassa|casa_oggetti|word|contenitore di zucca
+video-vocabulary|3|lekk|mangiare|azioni|word|azione
+video-vocabulary|3|lem|piegare|azioni|word|azione
+video-vocabulary|4|lii|questo|saluti|word|dimostrativo per cose
+video-vocabulary|4|liminaat|bibita|cibo|word|bevanda
+video-vocabulary|4|lu bees?|che novità ci sono?|saluti|phrase|saluto
+video-vocabulary|4|lunet|occhiali|casa_oggetti|word|oggetto
+video-vocabulary|4|màngi fi|sto bene; sono qui|saluti|phrase|risposta a un saluto
+video-vocabulary|4|maroon|essere marrone|mercato|word|colore
+video-vocabulary|4|mbaxane|berretto da uomo|casa_oggetti|word|abbigliamento
+video-vocabulary|4|mbubb|abito tradizionale|casa_oggetti|word|abbigliamento
+video-vocabulary|4|meew|latte|cibo|word|bevanda
+video-vocabulary|4|montar|orologio|casa_oggetti|word|oggetto
+video-vocabulary|4|moom|lui; lei|persone|word|pronome personale
+video-vocabulary|4|musóór|foulard per la testa|casa_oggetti|word|abbigliamento
+video-vocabulary|4|naan|bere|azioni|word|azione
+video-vocabulary|4|ñaar|due|numeri_tempo|word|numero
+video-vocabulary|4|nag|quanto a; dunque|saluti|word|particella discorsiva
+video-vocabulary|4|nag|mucca|meteo|word|animale
+video-vocabulary|4|naka waa kër gë|come sta la famiglia?|saluti|phrase|saluto: grafia del corso
+video-vocabulary|4|ñan|chi? riferito a più persone|persone|word|domanda al plurale
+video-vocabulary|4|nan nga def?|come stai?|saluti|phrase|saluto: grafia del corso
+video-vocabulary|4|nan nga fanaane?|come hai dormito?|saluti|phrase|saluto: grafia del corso
+video-vocabulary|4|ndaxte|perché|saluti|word|congiunzione causale
+video-vocabulary|4|ndës|stuoia da pavimento|casa_oggetti|word|oggetto
+video-vocabulary|4|ndeyjoor|destra|luoghi_direzioni|word|direzione
+video-vocabulary|4|nelaw|dormire|azioni|word|azione
+video-vocabulary|4|njël|alba|numeri_tempo|word|tempo
+video-vocabulary|4|njolloor|ora di pranzo|numeri_tempo|word|tempo
+video-vocabulary|4|ñóóx|stipare; riempire|azioni|word|azione
+video-vocabulary|4|ñuul|essere nero|mercato|word|colore
+video-vocabulary|4|nuyóó|salutare|azioni|word|azione
+video-vocabulary|4|nuyul ma waa kër gë|saluta la tua famiglia da parte mia|saluti|phrase|saluto
+video-vocabulary|4|oto|automobile|luoghi_direzioni|word|trasporto
+video-vocabulary|4|paketu suukër|scatola di zucchero|cibo|word|alimento confezionato
+video-vocabulary|4|pañe|cesto intrecciato|casa_oggetti|word|contenitore
+video-vocabulary|4|pot|contenitore; barattolo|casa_oggetti|word|oggetto
+video-vocabulary|5|potu meew|barattolo di latte|cibo|word|alimento confezionato
+video-vocabulary|5|rajo|radio|casa_oggetti|word|apparecchio
+video-vocabulary|5|rakk|fratello o sorella minore|persone|word|parentela
+video-vocabulary|5|rekk|soltanto|saluti|word|avverbio
+video-vocabulary|5|ren|quest'anno|numeri_tempo|word|tempo
+video-vocabulary|5|sa yaram jàmm|come va la salute?|saluti|phrase|saluto
+video-vocabulary|5|saal|soggiorno|casa_oggetti|word|stanza
+video-vocabulary|5|sabar|piccolo tamburo|casa_oggetti|word|strumento musicale
+video-vocabulary|5|satala|bollitore|casa_oggetti|word|utensile
+video-vocabulary|5|seetaan|guardare|azioni|word|azione
+video-vocabulary|5|seetaani|andare a guardare|azioni|word|azione
+video-vocabulary|5|segg|leopardo|meteo|word|animale
+video-vocabulary|5|sër|gonna avvolgente|casa_oggetti|word|abbigliamento
+video-vocabulary|5|sipp|gonna|casa_oggetti|word|abbigliamento
+video-vocabulary|5|sippax|gamberetto|cibo|word|animale
+video-vocabulary|5|sondeel|candela|casa_oggetti|word|oggetto
+video-vocabulary|5|soon|essere giallo|mercato|word|colore
+video-vocabulary|5|subë|mattina; domani|numeri_tempo|word|tempo
+video-vocabulary|5|suppu kànja|stufato di gombo|cibo|word|piatto
+video-vocabulary|5|surnaal|giornale|casa_oggetti|word|pubblicazione
+video-vocabulary|5|suuf|suolo; parte inferiore|luoghi_direzioni|word|posizione
+video-vocabulary|5|suukër|zucchero|cibo|word|ingrediente
+video-vocabulary|5|taal|accendere|azioni|word|azione
+video-vocabulary|5|taaw|primogenito o primogenita|persone|word|parentela
+video-vocabulary|5|taggoo|congedarsi|azioni|word|azione
+video-vocabulary|5|tàkkusaan|preghiera del tardo pomeriggio|numeri_tempo|word|preghiera
+video-vocabulary|5|Talaata|martedì|numeri_tempo|word|giorno della settimana
+video-vocabulary|5|tamit|anche|saluti|word|avverbio
+video-vocabulary|5|tëdd|sdraiarsi|azioni|word|azione
+video-vocabulary|5|teg|posare|azioni|word|azione
+video-vocabulary|5|tengaado|cappello conico tradizionale|casa_oggetti|word|abbigliamento
+video-vocabulary|5|timis|preghiera del tramonto|numeri_tempo|word|preghiera
+video-vocabulary|5|tisbaar|preghiera di mezzogiorno|numeri_tempo|word|preghiera
+video-vocabulary|5|toog|sedersi|azioni|word|azione
+video-vocabulary|5|topp|seguire|azioni|word|azione
+video-vocabulary|5|turëndoo|persona di cui si porta il nome|persone|word|relazione personale
+video-vocabulary|5|tuuti|essere piccolo|salute_emozioni|word|dimensione
+video-vocabulary|6|ubbi|aprire|azioni|word|azione
+video-vocabulary|6|waa|persona; persone|persone|word|persona
+video-vocabulary|6|waaw|sì|saluti|word|risposta
+video-vocabulary|6|wànte|ma|saluti|word|congiunzione
+video-vocabulary|6|warga|tè|cibo|word|bevanda
+video-vocabulary|6|weer|bicchiere|casa_oggetti|word|contenitore
+video-vocabulary|6|weer|mese; luna|numeri_tempo|word|tempo e astro
+video-vocabulary|6|weex|essere bianco|mercato|word|colore
+video-vocabulary|6|wert|essere verde|mercato|word|colore
+video-vocabulary|6|wet|lato|luoghi_direzioni|word|posizione
+video-vocabulary|6|xaaju guddi|mezzanotte|numeri_tempo|word|tempo
+video-vocabulary|6|xaalis|denaro|mercato|word|mezzo di pagamento
+video-vocabulary|6|xaj|cane|meteo|word|animale
+video-vocabulary|6|xarit|amico|persone|word|relazione personale
+video-vocabulary|6|xees|avere la pelle chiara|salute_emozioni|word|aspetto
+video-vocabulary|6|xonq|essere rosso|mercato|word|colore
+video-vocabulary|6|Yàlla|Dio|persone|word|religione
+video-vocabulary|6|yee|svegliare qualcuno|azioni|word|azione transitiva
+video-vocabulary|6|yeewu|svegliarsi|azioni|word|azione riflessiva
+video-vocabulary|6|yoor-yoor|metà mattina|numeri_tempo|word|tempo
+dakar-and-gore|4|ànd|accompagnare|azioni|word|azione
+dakar-and-gore|4|cosaan|storia|meteo|word|cultura
+dakar-and-gore|4|daj|subire; soffrire|salute_emozioni|word|esperienza
+dakar-and-gore|4|dajale|radunare|azioni|word|azione
+dakar-and-gore|4|dawal|guidare|azioni|word|trasporto
+dakar-and-gore|4|dawalkat|conducente|persone|word|professione
+dakar-and-gore|4|dëkkukaay|residenza|luoghi_direzioni|word|luogo
+dakar-and-gore|4|doxal|gestire; condurre|azioni|word|azione
+dakar-and-gore|4|dun|isola|meteo|word|geografia
+dakar-and-gore|4|feccukaay|luogo dove si balla|luoghi_direzioni|word|luogo
+dakar-and-gore|4|gaal|barca|luoghi_direzioni|word|trasporto
+dakar-and-gore|4|gox|quartiere|luoghi_direzioni|word|luogo
+dakar-and-gore|4|jaaraale|far passare|azioni|word|azione
+dakar-and-gore|4|jàngukaay|scuola|luoghi_direzioni|word|luogo
+dakar-and-gore|4|jàpp|catturare|azioni|word|azione
+dakar-and-gore|4|jaxasoo|essere mescolato|salute_emozioni|word|condizione
+dakar-and-gore|4|jëkkënte|competere|azioni|word|azione
+dakar-and-gore|4|jëm|dirigersi verso|azioni|word|movimento
+dakar-and-gore|4|jubsi|essere nella direzione di|luoghi_direzioni|word|direzione
+dakar-and-gore|4|kaar raapit|minibus|luoghi_direzioni|word|trasporto
+dakar-and-gore|4|kàddu|parola; discorso|saluti|word|comunicazione
+dakar-and-gore|4|kiliyaan|cliente; passeggero|persone|word|ruolo
+dakar-and-gore|4|lekkukaay|ristorante|luoghi_direzioni|word|luogo
+dakar-and-gore|4|liggééyukaay|luogo di lavoro|luoghi_direzioni|word|luogo
+dakar-and-gore|4|mbooloo|unione; gruppo|persone|word|gruppo
+dakar-and-gore|4|metti|essere grave; essere intenso|salute_emozioni|word|intensità
+dakar-and-gore|4|naanukaay|bar|luoghi_direzioni|word|luogo
+dakar-and-gore|4|naqar|grande dolore|salute_emozioni|word|emozione
+dakar-and-gore|4|pentuur|vernice; dipingere|casa_oggetti|word|materiale e azione
+dakar-and-gore|4|rafetaay|bellezza|salute_emozioni|word|qualità
+dakar-and-gore|4|romb|passare|azioni|word|movimento
+dakar-and-gore|4|salup|lancia; piccola imbarcazione|luoghi_direzioni|word|trasporto
+dakar-and-gore|4|seetsi|venire a vedere|azioni|word|azione
+dakar-and-gore|4|tali|strada|luoghi_direzioni|word|luogo
+dakar-and-gore|4|taxawukaay|fermata dell'autobus|luoghi_direzioni|word|luogo
+dakar-and-gore|4|tej|rinchiudere|azioni|word|azione
+dakar-and-gore|4|tiis|tristezza|salute_emozioni|word|emozione
+dakar-and-gore|4|toppatoo|occuparsi di; mantenere|azioni|word|azione
+dakar-and-gore|4|wisiteloo|accompagnare in visita|azioni|word|azione
+dakar-and-gore|4|won|mostrare|azioni|word|azione
+dakar-and-gore|4|wóór|essere affidabile|salute_emozioni|word|qualità
+dakar-and-gore|4|xew|accadere|azioni|word|evento
+dakar-and-gore|4|yeew|legare|azioni|word|azione: diverso da yee, svegliare
+dakar-and-gore|4|yore|tenere; prendersi cura di|azioni|word|azione
+dakar-and-gore|6|ndigal|ordine; legge|saluti|word|regola
+dakar-and-gore|6|mbedd|strada|luoghi_direzioni|word|luogo
+dakar-and-gore|6|fobeere|lavare con lo straccio|azioni|word|pulizia
+dakar-and-gore|6|fobeerekaay|straccio per pavimenti|casa_oggetti|word|utensile
+dakar-and-gore|6|fajukaay|ospedale|luoghi_direzioni|word|luogo
+senegal-full-lesson|1|rééw|paese|luoghi_direzioni|word|geografia
+senegal-full-lesson|1|féété|essere situato|luoghi_direzioni|word|posizione
+senegal-full-lesson|1|wàll|parte|luoghi_direzioni|word|porzione
+senegal-full-lesson|1|sawwu|ovest|luoghi_direzioni|word|punto cardinale
+senegal-full-lesson|1|taat|bordo|luoghi_direzioni|word|posizione
+senegal-full-lesson|1|gééj|mare; oceano|meteo|word|geografia
+senegal-full-lesson|1|woowéé|chiamare; denominare|azioni|word|azione
+senegal-full-lesson|1|dëkk|città|luoghi_direzioni|word|luogo
+senegal-full-lesson|1|bërëp|luogo|luoghi_direzioni|word|posizione
+senegal-full-lesson|1|bët Gànnaar|nord|luoghi_direzioni|word|punto cardinale
+senegal-full-lesson|1|terànga|ospitalità|saluti|word|cultura
+senegal-full-lesson|1|bët Saalum|sud|luoghi_direzioni|word|punto cardinale
+senegal-full-lesson|1|diiwaan|regione|luoghi_direzioni|word|geografia
+senegal-full-lesson|2|làkk|parlare una lingua|azioni|word|azione
+senegal-full-lesson|2|kàllaama|lingua|saluti|word|comunicazione
+senegal-full-lesson|2|bare|essere molti|numeri_tempo|word|quantità
+senegal-full-lesson|2|leneen|un'altra cosa|saluti|word|riferimento
+senegal-full-lesson|2|dëkkëndo|vivere insieme|azioni|word|azione
+senegal-full-lesson|2|tàmbali|cominciare|azioni|word|azione
+senegal-full-lesson|2|tarixa|confraternita religiosa|persone|word|religione
+senegal-full-lesson|2|tarbiyu|servizio; lealtà|salute_emozioni|word|condotta
+senegal-full-lesson|2|fas jom|amor proprio|salute_emozioni|word|qualità
+senegal-full-lesson|2|nangusi|prendere il controllo|azioni|word|azione
+senegal-full-lesson|2|xeex|combattere; competere|azioni|word|azione
+senegal-full-lesson|2|njiit|capo; dirigente|persone|word|ruolo
+senegal-full-lesson|2|siiwal|rendere famoso|azioni|word|azione
+senegal-full-lesson|2|xam-xam|conoscenza|salute_emozioni|word|sapere
+senegal-full-lesson|2|donn|ereditare|azioni|word|azione
+senegal-full-lesson|3|nguur|regno; governo|luoghi_direzioni|word|organizzazione politica
+senegal-full-lesson|3|coosaan|tradizione|meteo|word|cultura
+senegal-full-lesson|3|fonk|rispettare|azioni|word|azione
+senegal-full-lesson|3|ubbeeku|aprirsi|azioni|word|azione
+senegal-full-lesson|3|àddina|mondo|meteo|word|geografia
+senegal-full-lesson|3|moom|possedere|azioni|word|azione: diverso dal pronome moom
+senegal-full-lesson|3|moom bopp|essere indipendente|salute_emozioni|word|condizione
+senegal-full-lesson|3|jiite|guidare; dirigere|azioni|word|ruolo di comando
+senegal-full-lesson|3|bayyil|ritirarsi|azioni|word|azione
+senegal-full-lesson|3|teral|trattare bene|azioni|word|ospitalità
+senegal-full-lesson|3|toggal|cucinare per qualcuno|azioni|word|azione
+senegal-full-lesson|3|yaatal|accogliere|azioni|word|ospitalità
+senegal-full-lesson|4|garab|albero|meteo|word|pianta
+senegal-full-lesson|4|soow|latte fermentato|cibo|word|alimento
+senegal-full-lesson|4|taalibe|studente|persone|word|ruolo
+senegal-full-lesson|4|cin|pentola|casa_oggetti|word|utensile
+senegal-full-lesson|4|jumaa|moschea|luoghi_direzioni|word|luogo
+senegal-full-lesson|4|safara|fuoco|meteo|word|elemento
+senegal-full-lesson|4|fas|cavallo|meteo|word|animale
+senegal-full-lesson|4|nit|persona|persone|word|persona
+senegal-history-ethnicities|2|boor|intorno|luoghi_direzioni|word|posizione
+senegal-history-ethnicities|2|buur|re|persone|word|ruolo
+senegal-history-ethnicities|2|dajaloo|radunarsi|azioni|word|azione
+senegal-history-ethnicities|2|dëgg|verità|saluti|word|concetto
+senegal-history-ethnicities|2|doole|forza; potere|salute_emozioni|word|qualità
+senegal-history-ethnicities|2|fàtteliku|ricordare|azioni|word|azione
+senegal-history-ethnicities|2|fal|eleggere|azioni|word|azione
+senegal-history-ethnicities|2|feeñ|apparire|azioni|word|azione
+senegal-history-ethnicities|2|jàmbaar|eroe|persone|word|persona
+senegal-history-ethnicities|2|jëkk|essere il primo|numeri_tempo|word|ordine
+senegal-history-ethnicities|2|bu jëkk|all'inizio|numeri_tempo|phrase|tempo
+senegal-history-ethnicities|2|jom|rispetto di sé|salute_emozioni|word|qualità
+senegal-history-ethnicities|2|mar|avere sete|salute_emozioni|word|condizione
+senegal-history-ethnicities|2|nangu|accettare|azioni|word|azione
+senegal-history-ethnicities|2|ngir|per; allo scopo di|saluti|word|finalità
+senegal-history-ethnicities|2|ni|come|saluti|word|congiunzione
+senegal-history-ethnicities|2|rey|uccidere|azioni|word|azione
+senegal-history-ethnicities|2|siiw|essere famoso|salute_emozioni|word|qualità
+senegal-history-ethnicities|2|walangaan|scorrere|azioni|word|movimento
+senegal-history-ethnicities|2|wànneeku|diminuire|azioni|word|quantità
+senegal-history-ethnicities|2|woykat|cantante|persone|word|professione
+senegal-history-ethnicities|2|xare|guerra|meteo|word|società
+senegal-history-ethnicities|2|yokku|aumentare|azioni|word|quantità
+eating-meals-1-amadu-an|1|def|fare|azioni|word|azione
+eating-meals-1-amadu-an|1|jot|giungere il momento|numeri_tempo|word|tempo
+eating-meals-1-amadu-an|1|bës bu nekk|ogni giorno|numeri_tempo|phrase|frequenza
+eating-meals-1-amadu-an|1|sonn|essere stanco|salute_emozioni|word|condizione
+eating-meals-1-amadu-an|1|te|e|saluti|word|congiunzione fra frasi
+eating-meals-1-amadu-an|1|xalaat|pensare|azioni|word|azione
+eating-meals-1-amadu-an|2|dawsi|correre verso qui|azioni|word|movimento
+eating-meals-1-amadu-an|2|gestu|guardare dietro di sé|azioni|word|azione
+eating-meals-1-amadu-an|2|lal|stendere|azioni|word|azione: diverso da lal, letto
+eating-meals-1-amadu-an|2|lekkee|mangiare con|azioni|word|azione
+eating-meals-1-amadu-an|2|séén|scorgere da lontano|azioni|word|azione
+eating-meals-1-amadu-an|2|sukk|inginocchiarsi|azioni|word|azione
+eating-meals-1-amadu-an|2|taaj|posare|azioni|word|azione
+eating-meals-1-amadu-an|2|yééx|essere in ritardo|numeri_tempo|word|tempo
+eating-meals-1-amadu-an|3|fees|essere pieno|salute_emozioni|word|condizione
+eating-meals-1-amadu-an|3|màndi|aver placato la sete|salute_emozioni|word|condizione
+eating-meals-2-waxtu-an|2|bol|ciotola|casa_oggetti|word|contenitore
+eating-meals-2-waxtu-an|2|cinwaar|tipo di pentola|casa_oggetti|word|utensile
+eating-meals-2-waxtu-an|2|kuddu cinwaar|schiumarola|casa_oggetti|word|utensile
+eating-meals-2-waxtu-an|2|door|iniziare|azioni|word|azione
+eating-meals-2-waxtu-an|2|jàdd|svoltare|azioni|word|movimento
+eating-meals-2-waxtu-an|2|kàddir|pentola da cucina|casa_oggetti|word|utensile
+eating-meals-2-waxtu-an|2|koñ|strada|luoghi_direzioni|word|luogo
+eating-meals-2-waxtu-an|2|boppu koñ|angolo della strada|luoghi_direzioni|word|luogo
+eating-meals-2-waxtu-an|2|mànke|mancare|azioni|word|condizione
+eating-meals-2-waxtu-an|2|ñam|cibo|cibo|word|alimento
+eating-meals-2-waxtu-an|2|ndax|se|saluti|word|congiunzione interrogativa indiretta
+eating-meals-2-waxtu-an|2|ñeex|brodo|cibo|word|alimento
+eating-meals-2-waxtu-an|2|sex|mettere in bocca|azioni|word|azione
+eating-meals-2-waxtu-an|2|suur|essere sazio|salute_emozioni|word|condizione
+eating-meals-2-waxtu-an|2|tib|manciata|numeri_tempo|word|quantità
+eating-meals-2-waxtu-an|2|tollu|essere situato|luoghi_direzioni|word|posizione
+eating-meals-2-waxtu-an|2|tuur|versare|azioni|word|azione
+eating-meals-2-waxtu-an|2|waañ|cucina|casa_oggetti|word|stanza
+eating-meals-2-waxtu-an|2|wër|circondare|azioni|word|azione
+eating-meals-2-waxtu-an|2|woote|chiamare|azioni|word|azione
+eating-meals-2-waxtu-an|2|xëccoo|contendersi qualcosa|azioni|word|azione
+eating-meals-2-waxtu-an|2|xeeñ|avere un buon profumo|salute_emozioni|word|qualità
+eating-meals-2-waxtu-an|2|xóóñ|crosta di riso sul fondo della pentola|cibo|word|alimento
+eating-meals-2-waxtu-an|2|yekk|mettere il cibo nella ciotola|azioni|word|azione
+eating-meals-3-banneex|2|kànja|gombo|cibo|word|ortaggio
+eating-meals-3-banneex|2|lakk|grigliare|azioni|word|cottura: diverso da bruciare
+eating-meals-3-banneex|2|maafe|pollo in salsa di arachidi|cibo|word|piatto
+eating-meals-3-banneex|2|roof|farcire|azioni|word|azione
+eating-meals-3-banneex|2|saf|essere saporito|cibo|word|sapore
+eating-meals-3-banneex|2|supp|zuppa|cibo|word|piatto
+eating-meals-3-banneex|2|yaasa|piatto di carne con limone e cipolla|cibo|word|piatto
+eating-meals-3-banneex|2|yombale|essere conveniente|mercato|word|prezzo
+Ch-05-Le-03-comp-quality|8|gën|superare|azioni|word|confronto
+Ch-05-Le-03-comp-quality|9|dàq|essere più bello o più buono di|salute_emozioni|word|confronto di aspetto o sapore
+Ch-05-Le-03-comp-quality|9|nuróó|assomigliarsi|salute_emozioni|word|confronto
+Ch-05-Le-03-comp-quality|9|tolloo|avere la stessa altezza o dimensione|salute_emozioni|word|confronto
+Ch-05-Le-03-comp-quality|9|maase|avere la stessa età|numeri_tempo|word|confronto
+Ch-05-Le-03-comp-quality|9|wuute|essere diverso da|salute_emozioni|word|confronto
+Ch-05-Le-03-comp-quality|10|am gàcce|provare vergogna|salute_emozioni|word|espressione di qualità
+Ch-05-Le-03-comp-quality|10|am taxawaay|essere alto|salute_emozioni|word|espressione di qualità per persone
+Ch-05-Le-03-comp-quality|11|am kersa|essere educato; essere rispettoso|salute_emozioni|word|espressione di qualità
+Ch-05-Le-03-comp-quality|11|am suturë|essere discreto|salute_emozioni|word|espressione di qualità
+Ch-05-Le-03-comp-quality|11|am yitté|essere premuroso|salute_emozioni|word|espressione di qualità
+Ch-05-Le-03-comp-quality|11|am sago|essere calmo|salute_emozioni|word|espressione di qualità
+Ch-05-Le-03-comp-quality|11|am taar|essere bella|salute_emozioni|word|espressione di qualità per donne
+Ch-05-Le-03-comp-quality|11|am wërsëk|essere fortunato|salute_emozioni|word|espressione di qualità
+Ch-05-Le-03-comp-quality|11|am xel|essere intelligente|salute_emozioni|word|espressione di qualità: distinta da muus, astuto
+Ch-05-Le-03-comp-quality|11|am xorom|avere una personalità interessante|salute_emozioni|word|espressione di qualità
+Ch-05-Le-03-comp-quality|11|am daraja|avere carisma|salute_emozioni|word|espressione di qualità
+Ch-05-Le-03-comp-quality|11|am kollëré|essere leale|salute_emozioni|word|espressione di qualità
+Ch-05-Le-03-comp-quality|11|am mbósoor|essere attento; essere premuroso|salute_emozioni|word|espressione di qualità
+Ch-05-Le-03-comp-quality|11|am xamxam|avere conoscenza|salute_emozioni|word|espressione di qualità
+Ch-05-Le-03-comp-quality|10|ñàkk|mancare di|azioni|word|azione
+Ch-05-Le-03-comp-quality|11|poobar|pepe nero|cibo|word|ingrediente
+Ch-05-Le-03-comp-quality|11|naanaa|menta|cibo|word|ingrediente
+vy1fw1ab8mk08v1e7bupmsdaiq77gdj8|5|awokaa|avvocato|persone|word|professione
+vy1fw1ab8mk08v1e7bupmsdaiq77gdj8|5|durwaa|diritto|casa_oggetti|word|materia di studio
+vy1fw1ab8mk08v1e7bupmsdaiq77gdj8|5|ci|in; a; su|luoghi_direzioni|word|preposizione
+vy1fw1ab8mk08v1e7bupmsdaiq77gdj8|5|itam|anche|saluti|word|avverbio
+vy1fw1ab8mk08v1e7bupmsdaiq77gdj8|5|jigéén|donna|persone|word|persona
+vy1fw1ab8mk08v1e7bupmsdaiq77gdj8|5|sama|mio; mia|persone|word|possessivo
+vy1fw1ab8mk08v1e7bupmsdaiq77gdj8|5|sant|avere come cognome|azioni|word|nome
+vy1fw1ab8mk08v1e7bupmsdaiq77gdj8|5|tudd|chiamarsi|azioni|word|nome
+Ch-05-Le-01-pred-adj|4|njool|essere alto|salute_emozioni|word|altezza di una persona
+Ch-05-Le-01-pred-adj|5|nooy|essere morbido|salute_emozioni|word|consistenza
+Ch-05-Le-03-comp-quality|2|sew|essere magro|salute_emozioni|word|corporatura
+Ch-05-Le-03-comp-quality|2|xeereer|avere la pelle bruna|salute_emozioni|word|aspetto
+Ch-05-Le-03-comp-quality|8|xóót|essere profondo|meteo|word|profondità
+8neppkbq23dl684216afn57qkw12bh45|2|des|rimanere|azioni|word|azione
+8neppkbq23dl684216afn57qkw12bh45|3|yeewu|svegliarsi|azioni|word|azione riflessiva
+935wt436861im28606y5nebvawkgd3vc|1|sànq|poco fa|numeri_tempo|word|tempo
+935wt436861im28606y5nebvawkgd3vc|1|bu yàgg|molto tempo fa|numeri_tempo|phrase|tempo
+eating-meals-2-waxtu-an|2|attaaya|preparare il tè|azioni|word|azione: distinta da àttaaya, tè
+eating-meals-2-waxtu-an|2|Ayca|forza!; avanti!|saluti|word|esortazione
+eating-meals-2-waxtu-an|2|Ndokk|tanto meglio!|saluti|word|esclamazione

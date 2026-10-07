@@ -4,9 +4,11 @@ PWA offline per lo studio del Wolof. GitHub Pages pubblica `site/` dopo i contro
 
 ## Qualità linguistica
 
-La release 2.5 applica una revisione preventiva su fonti istituzionali: 193 voci attive, 463 candidate sospese. Le sospensioni non dichiarano automaticamente una parola errata. Ogni voce attiva include forma, significato originale, riferimento e uso. Le traduzioni italiane sono adattamenti redazionali, non una certificazione madrelingua.
+La release 2.6 applica una revisione preventiva su fonti istituzionali: 556 voci attive: 501 forme lessicali distinte, 9 sensi aggiuntivi e 46 frasi; 406 candidate sospese. Le sospensioni non dichiarano automaticamente una parola errata. Ogni voce attiva include forma, significato originale, riferimento e uso. Le traduzioni italiane sono adattamenti redazionali, non una certificazione madrelingua.
 
 `muus` è distinto come nome (gatto) e verbo di qualità (essere astuto/furbo). Il significato generico precedente “intelligente” non entra più nei quiz. Gli esercizi specificano l'uso richiesto anche per `mboq`.
+
+L’espansione usa il corso ufficiale UCLA: ogni nuova approvazione conserva documento, pagina, estratto originale e impronta SHA-256. Il sito mostra la fonte della singola voce.
 
 Leggere `CORPUS-VALIDATION.md` per criteri, fonti, limitazioni e procedura di ammissione. Consultare `corpus-validation-report.json` per le sospensioni. Il corpus storico di 654 candidate resta archiviato in `corpus-candidates.json`; non è il corpus pubblicato.
 
@@ -14,11 +16,11 @@ Leggere `CORPUS-VALIDATION.md` per criteri, fonti, limitazioni e procedura di am
 
 1. Aggiungere la proposta alle candidate.
 2. Controllare forma, significato e uso su una voce precisa di una fonte istituzionale. Non usare traduttori automatici come conferma.
-3. Solo dopo il controllo aggiungere il riferimento in `official-approvals.tsv`; per omografi specificare l'ID del senso.
+3. Solo dopo il controllo aggiungere il riferimento in `official-approvals.tsv` o `institutional-approvals.json`; per omografi specificare l'ID del senso.
 4. Eseguire `python3 validate-corpus.py`.
 5. Eseguire `python3 validate-corpus.py --check` e `node --test tests/*.test.cjs`.
 
-I file pubblicati sono generati. Modificarli senza aggiornare il registro blocca il deploy. Varianti, esempi e vecchie domande contestuali privi di conferma restano esclusi. Il filtro dell'app verifica anche che i significati non siano cambiati dopo l'approvazione.
+I file pubblicati sono generati. Il corpus è distribuito in 23 pacchetti da massimo 25 voci, con elenco e cache offline controllati automaticamente. Modificarli senza aggiornare il registro blocca il deploy. Varianti, esempi e vecchie domande contestuali privi di conferma restano esclusi. Il filtro dell'app verifica anche che i significati non siano cambiati dopo l'approvazione.
 
 ## Esercizi e progressi
 

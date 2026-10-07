@@ -4,7 +4,7 @@ function boot(saved){
  const node=id=>{if(!nodes.has(id))nodes.set(id,{value:'',dataset:{},style:{},classList:{add(){},remove(){},toggle(){}},focus(){},setAttribute(){},innerHTML:''});return nodes.get(id);};
  const document={querySelector:node,querySelectorAll:()=>[]};
  const ctx={window:{scrollTo(){},addEventListener(){}},document,navigator:{onLine:true},location:{protocol:'file:'},localStorage:{getItem:k=>store[k]||null,setItem:(k,v)=>store[k]=v},setTimeout(){},clearTimeout(){},confirm:()=>false,console,URL};
- vm.createContext(ctx);for(const file of ['data.js','learning.js','lexicon-packs.js'])vm.runInContext(fs.readFileSync(__dirname+'/../site/'+file,'utf8'),ctx);
+ vm.createContext(ctx);for(const file of ['data.js','learning.js','lexicon-packs.js',...fs.readdirSync(__dirname+'/../site').filter(f=>/^lexicon-\d+\.js$/.test(f)).sort()])vm.runInContext(fs.readFileSync(__dirname+'/../site/'+file,'utf8'),ctx);
  let app=fs.readFileSync(__dirname+'/../site/app.js','utf8');app=app.replace(" $('#hamb').onclick", " window.testAPI={buildQuestions,makeWordQ,startModule,startMixed,launch,next,check,wordById,getState:()=>S,getQuiz:()=>quiz};\n $('#hamb').onclick");vm.runInContext(app,ctx);
  return {api:ctx.window.testAPI,data:ctx.window.WOLOF_DATA,node,store};
 }

@@ -1,20 +1,23 @@
 {
-  "candidates": 656,
-  "published": 193,
-  "quarantined": 463,
-  "conflicts": 7,
-  "verifiedExpansion": 29,
+  "candidates": 962,
+  "published": 556,
+  "quarantined": 406,
+  "distinctLexicalForms": 501,
+  "words": 510,
+  "phrases": 46,
+  "conflicts": 8,
+  "verifiedExpansion": 63,
   "byCategory": {
-    "saluti": 14,
-    "persone": 17,
-    "numeri_tempo": 33,
-    "casa_oggetti": 21,
-    "cibo": 13,
-    "mercato": 4,
-    "luoghi_direzioni": 23,
-    "azioni": 28,
-    "salute_emozioni": 25,
-    "meteo": 15
+    "saluti": 52,
+    "persone": 45,
+    "numeri_tempo": 80,
+    "casa_oggetti": 64,
+    "cibo": 31,
+    "mercato": 16,
+    "luoghi_direzioni": 59,
+    "azioni": 113,
+    "salute_emozioni": 68,
+    "meteo": 28
   },
   "quarantine": [
     {
@@ -53,14 +56,6 @@
       "id": "w016",
       "wolof": "Jërëjëf",
       "italian": "grazie",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "legacy"
-    },
-    {
-      "id": "w017",
-      "wolof": "Waaw",
-      "italian": "sì",
       "status": "pending",
       "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
       "origin": "legacy"
@@ -114,14 +109,6 @@
       "origin": "legacy"
     },
     {
-      "id": "w044",
-      "wolof": "doom",
-      "italian": "figlio / figlia",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "legacy"
-    },
-    {
       "id": "w045",
       "wolof": "mag",
       "italian": "adulto / persona più anziana",
@@ -133,14 +120,6 @@
       "id": "w046",
       "wolof": "ndaw",
       "italian": "giovane",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "legacy"
-    },
-    {
-      "id": "w047",
-      "wolof": "jàngalekat",
-      "italian": "insegnante",
       "status": "pending",
       "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
       "origin": "legacy"
@@ -162,14 +141,6 @@
       "origin": "legacy"
     },
     {
-      "id": "w081",
-      "wolof": "bés",
-      "italian": "giorno",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "legacy"
-    },
-    {
       "id": "w082",
       "wolof": "ayubés",
       "italian": "settimana",
@@ -181,14 +152,6 @@
       "id": "w085",
       "wolof": "tey",
       "italian": "oggi",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "legacy"
-    },
-    {
-      "id": "w086",
-      "wolof": "ëllëg",
-      "italian": "domani",
       "status": "pending",
       "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
       "origin": "legacy"
@@ -218,14 +181,6 @@
       "origin": "legacy"
     },
     {
-      "id": "w106",
-      "wolof": "ndës",
-      "italian": "stuoia",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "legacy"
-    },
-    {
       "id": "w107",
       "wolof": "yére",
       "italian": "vestiti",
@@ -237,14 +192,6 @@
       "id": "w110",
       "wolof": "dall",
       "italian": "scarpe",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "legacy"
-    },
-    {
-      "id": "w112",
-      "wolof": "lunet",
-      "italian": "occhiali",
       "status": "pending",
       "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
       "origin": "legacy"
@@ -282,14 +229,6 @@
       "origin": "legacy"
     },
     {
-      "id": "w127",
-      "wolof": "soow",
-      "italian": "yogurt / latte cagliato",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "legacy"
-    },
-    {
       "id": "w128",
       "wolof": "beurre",
       "italian": "burro",
@@ -314,14 +253,6 @@
       "origin": "legacy"
     },
     {
-      "id": "w131",
-      "wolof": "nag",
-      "italian": "manzo / bovino",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "legacy"
-    },
-    {
       "id": "w132",
       "wolof": "xar",
       "italian": "agnello / pecora",
@@ -333,14 +264,6 @@
       "id": "w133",
       "wolof": "keccax",
       "italian": "pesce secco",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "legacy"
-    },
-    {
-      "id": "w134",
-      "wolof": "sippax",
-      "italian": "gamberetto",
       "status": "pending",
       "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
       "origin": "legacy"
@@ -413,14 +336,6 @@
       "id": "w144",
       "wolof": "gerte",
       "italian": "arachide",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "legacy"
-    },
-    {
-      "id": "w145",
-      "wolof": "poobar",
-      "italian": "pepe",
       "status": "pending",
       "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
       "origin": "legacy"
@@ -650,14 +565,6 @@
       "origin": "legacy"
     },
     {
-      "id": "w174",
-      "wolof": "naanaa",
-      "italian": "menta",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "legacy"
-    },
-    {
       "id": "w175",
       "wolof": "jënd",
       "italian": "comprare",
@@ -698,14 +605,6 @@
       "origin": "legacy"
     },
     {
-      "id": "w180",
-      "wolof": "xaalis",
-      "italian": "denaro",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "legacy"
-    },
-    {
       "id": "w181",
       "wolof": "weccit",
       "italian": "resto / cambio",
@@ -717,14 +616,6 @@
       "id": "w182",
       "wolof": "meetar",
       "italian": "metro",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "legacy"
-    },
-    {
-      "id": "w187",
-      "wolof": "wert",
-      "italian": "verde",
       "status": "pending",
       "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
       "origin": "legacy"
@@ -757,14 +648,6 @@
       "id": "w191",
       "wolof": "sokola",
       "italian": "marrone",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "legacy"
-    },
-    {
-      "id": "w192",
-      "wolof": "dërëm",
-      "italian": "5 CFA (unità tradizionale di conteggio monetario)",
       "status": "pending",
       "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
       "origin": "legacy"
@@ -882,22 +765,6 @@
       "origin": "legacy"
     },
     {
-      "id": "w227",
-      "wolof": "tali",
-      "italian": "strada asfaltata",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "legacy"
-    },
-    {
-      "id": "w228",
-      "wolof": "mbedd",
-      "italian": "via / strada",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "legacy"
-    },
-    {
       "id": "w229",
       "wolof": "korosmaa",
       "italian": "incrocio",
@@ -925,14 +792,6 @@
       "id": "w232",
       "wolof": "bët gannaar",
       "italian": "nord",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "legacy"
-    },
-    {
-      "id": "w233",
-      "wolof": "bët saalum",
-      "italian": "sud",
       "status": "pending",
       "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
       "origin": "legacy"
@@ -1106,30 +965,6 @@
       "origin": "legacy"
     },
     {
-      "id": "w258",
-      "wolof": "dem",
-      "italian": "andare / partire",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "legacy"
-    },
-    {
-      "id": "w259",
-      "wolof": "jëm",
-      "italian": "dirigersi verso",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "legacy"
-    },
-    {
-      "id": "w260",
-      "wolof": "jàng",
-      "italian": "studiare / leggere",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "legacy"
-    },
-    {
       "id": "w261",
       "wolof": "liggéey",
       "italian": "lavorare",
@@ -1234,14 +1069,6 @@
       "origin": "legacy"
     },
     {
-      "id": "w293",
-      "wolof": "metti",
-      "italian": "fare male / essere doloroso",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "legacy"
-    },
-    {
       "id": "w294",
       "wolof": "yëg",
       "italian": "sentire / percepire",
@@ -1277,14 +1104,6 @@
       "id": "w298",
       "wolof": "bopp",
       "italian": "testa",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "legacy"
-    },
-    {
-      "id": "w299",
-      "wolof": "biir",
-      "italian": "pancia / ventre",
       "status": "pending",
       "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
       "origin": "legacy"
@@ -1626,22 +1445,6 @@
       "origin": "expansion"
     },
     {
-      "id": "pcsn-f08dd851c430",
-      "wolof": "bind",
-      "italian": "scrivere",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
-      "id": "pcsn-a5d09b2f6938",
-      "wolof": "bokk",
-      "italian": "condividere; fare parte di",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
       "id": "pcsn-431f1d7aa5da",
       "wolof": "daje",
       "italian": "incontrarsi",
@@ -1658,33 +1461,9 @@
       "origin": "expansion"
     },
     {
-      "id": "pcsn-6253b11b51fa",
-      "wolof": "dawal",
-      "italian": "guidare un veicolo",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
-      "id": "pcsn-cb8379ac2098",
-      "wolof": "def",
-      "italian": "fare",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
       "id": "pcsn-b8c129eb259e",
       "wolof": "defar",
       "italian": "realizzare; riparare",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
-      "id": "pcsn-603c40ceeff4",
-      "wolof": "delloo",
-      "italian": "restituire",
       "status": "pending",
       "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
       "origin": "expansion"
@@ -1805,14 +1584,6 @@
       "id": "pcsn-467d144b86aa",
       "wolof": "fekk",
       "italian": "trovare qualcuno o qualcosa in un luogo",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
-      "id": "pcsn-2534e2de1dec",
-      "wolof": "door",
-      "italian": "cominciare",
       "status": "pending",
       "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
       "origin": "expansion"
@@ -1954,14 +1725,6 @@
       "origin": "expansion"
     },
     {
-      "id": "pcsn-2ccd51698c58",
-      "wolof": "tëdd",
-      "italian": "sdraiarsi",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
       "id": "pcsn-02d1e24c740d",
       "wolof": "tëddi",
       "italian": "andare a letto",
@@ -1986,14 +1749,6 @@
       "origin": "expansion"
     },
     {
-      "id": "pcsn-f4f0328c154a",
-      "wolof": "génn",
-      "italian": "uscire",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
       "id": "pcsn-58e3d99e1d93",
       "wolof": "gis",
       "italian": "vedere",
@@ -2013,14 +1768,6 @@
       "id": "pcsn-363351ce7cdb",
       "wolof": "jaar",
       "italian": "passare per",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
-      "id": "pcsn-ba6b5e388b13",
-      "wolof": "jël",
-      "italian": "prendere",
       "status": "pending",
       "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
       "origin": "expansion"
@@ -2178,14 +1925,6 @@
       "origin": "expansion"
     },
     {
-      "id": "pcsn-dbc1efc7f05a",
-      "wolof": "seetaan",
-      "italian": "guardare",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
       "id": "pcsn-a0cf00ad53af",
       "wolof": "seetlu",
       "italian": "notare",
@@ -2210,14 +1949,6 @@
       "origin": "expansion"
     },
     {
-      "id": "pcsn-a6d11e126c61",
-      "wolof": "taal",
-      "italian": "accendere",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
       "id": "pcsn-0391f19e3a63",
       "wolof": "tàggu",
       "italian": "congedarsi",
@@ -2234,22 +1965,6 @@
       "origin": "expansion"
     },
     {
-      "id": "pcsn-b27f83d4c6d1",
-      "wolof": "toppatoo",
-      "italian": "prendersi cura di",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
-      "id": "pcsn-304245b9cbf6",
-      "wolof": "ubbi",
-      "italian": "aprire",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
       "id": "pcsn-39d0a7106bab",
       "wolof": "wàcc",
       "italian": "scendere",
@@ -2258,25 +1973,9 @@
       "origin": "expansion"
     },
     {
-      "id": "pcsn-468aba26e46c",
-      "wolof": "teg",
-      "italian": "posare",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
       "id": "pcsn-7a0e8341a2a3",
       "wolof": "yéeg",
       "italian": "salire; arrampicarsi",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
-      "id": "pcsn-f93eb4bcf087",
-      "wolof": "dugg",
-      "italian": "entrare",
       "status": "pending",
       "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
       "origin": "expansion"
@@ -2458,14 +2157,6 @@
       "origin": "expansion"
     },
     {
-      "id": "pcsn-3fc4cd61af55",
-      "wolof": "nooy",
-      "italian": "essere morbido",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
       "id": "pcsn-ba6022f78e01",
       "wolof": "oyof",
       "italian": "essere leggero",
@@ -2522,14 +2213,6 @@
       "origin": "expansion"
     },
     {
-      "id": "pcsn-404d1345f4b1",
-      "wolof": "wuute",
-      "italian": "essere diverso",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
       "id": "pcsn-5edc2b834e5a",
       "wolof": "yaakaar",
       "italian": "sperare",
@@ -2541,22 +2224,6 @@
       "id": "pcsn-23d742e646b2",
       "wolof": "yágg",
       "italian": "durare a lungo",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
-      "id": "pcsn-511739cc1b78",
-      "wolof": "démb",
-      "italian": "ieri",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
-      "id": "pcsn-5e0cba1e6e96",
-      "wolof": "biig",
-      "italian": "ieri notte",
       "status": "pending",
       "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
       "origin": "expansion"
@@ -2578,30 +2245,6 @@
       "origin": "expansion"
     },
     {
-      "id": "pcsn-6c30a051b883",
-      "wolof": "daaw",
-      "italian": "l'anno scorso",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
-      "id": "pcsn-db1a748b23cf",
-      "wolof": "ren",
-      "italian": "quest'anno",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
-      "id": "pcsn-374718894409",
-      "wolof": "déwén",
-      "italian": "l'anno prossimo",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
       "id": "pcsn-00b3e9725c81",
       "wolof": "bés bu nekk",
       "italian": "ogni giorno",
@@ -2618,25 +2261,9 @@
       "origin": "expansion"
     },
     {
-      "id": "pcsn-1de05d4f28ae",
-      "wolof": "ci saa si",
-      "italian": "subito",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
       "id": "pcsn-865025d6b572",
       "wolof": "faraldi",
       "italian": "spesso",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
-      "id": "pcsn-c083d102f81f",
-      "wolof": "keroog",
-      "italian": "l'altro giorno",
       "status": "pending",
       "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
       "origin": "expansion"
@@ -2677,22 +2304,6 @@
       "id": "pcsn-5e0795ace2ec",
       "wolof": "séex",
       "italian": "gemelli",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
-      "id": "pcsn-66ebe89c2800",
-      "wolof": "taaw",
-      "italian": "primogenito",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
-      "id": "pcsn-a5853343ac8e",
-      "wolof": "caat",
-      "italian": "figlio più piccolo",
       "status": "pending",
       "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
       "origin": "expansion"
@@ -2922,14 +2533,6 @@
       "origin": "expansion"
     },
     {
-      "id": "pcsn-44816ae4a940",
-      "wolof": "ñam",
-      "italian": "cibo",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
       "id": "pcsn-fc45f5b8e420",
       "wolof": "am-am",
       "italian": "reddito; beni posseduti",
@@ -2949,14 +2552,6 @@
       "id": "pcsn-0e1be0bdf813",
       "wolof": "jë",
       "italian": "fronte",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
-      "id": "pcsn-eecfc143cccc",
-      "wolof": "kanam",
-      "italian": "viso",
       "status": "pending",
       "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
       "origin": "expansion"
@@ -3021,8 +2616,8 @@
       "id": "pcsn-22455ab7ae9e",
       "wolof": "gannaaw",
       "italian": "schiena",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
+      "status": "conflict",
+      "reason": "gannaaw was incorrectly glossed as schiena. UCLA distinguishes gannaaw (after) from ginnaaw (back); corrected senses have separate IDs.",
       "origin": "expansion"
     },
     {
@@ -3170,14 +2765,6 @@
       "origin": "expansion"
     },
     {
-      "id": "pcsn-6511c5688bbb",
-      "wolof": "fas",
-      "italian": "cavallo",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
       "id": "pcsn-10d4ed9eec11",
       "wolof": "mbaam sëf",
       "italian": "asino",
@@ -3290,22 +2877,6 @@
       "origin": "expansion"
     },
     {
-      "id": "pcsn-97cb1a9bf7cb",
-      "wolof": "dajale",
-      "italian": "radunare; raccogliere insieme",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
-      "id": "pcsn-fb5642d05a76",
-      "wolof": "yeew",
-      "italian": "legare",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
       "id": "pcsn-50556599e95a",
       "wolof": "yokk",
       "italian": "aumentare; aggiungere",
@@ -3349,30 +2920,6 @@
       "id": "pcsn-0fda2f1c06bd",
       "wolof": "pànt",
       "italian": "pendio",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
-      "id": "pcsn-9c7448338700",
-      "wolof": "jàmm",
-      "italian": "pace",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
-      "id": "pcsn-cc86af11989d",
-      "wolof": "dara",
-      "italian": "nulla; niente",
-      "status": "pending",
-      "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
-      "origin": "expansion"
-    },
-    {
-      "id": "pcsn-c39e0e24bb16",
-      "wolof": "rekk",
-      "italian": "soltanto",
       "status": "pending",
       "reason": "No exact form-and-meaning approval from a reviewed institutional entry yet; this does not mean the word is invalid.",
       "origin": "expansion"
