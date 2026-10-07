@@ -20,6 +20,7 @@ jobs:
           node-version: '22'
       - name: Validate learning and legacy progress
         run: |
+          python3 validate-corpus.py --check
           node --test tests/*.test.cjs
           for file in site/*.js; do node --check "$file"; done
           python3 - <<'CHECK'
@@ -31,8 +32,8 @@ jobs:
           assert "KEY='njang-wolof-v2'" in (site/'app.js').read_text()
           for asset in ('styles.css', 'data.js', 'lexicon-packs.js', 'learning.js', 'app.js'):
               assert (site/asset).is_file()
-              assert asset+'?v=36' in (site/'index.html').read_text()
-              assert asset+'?v=36' in (site/'service-worker.js').read_text()
+              assert asset+'?v=37' in (site/'index.html').read_text()
+              assert asset+'?v=37' in (site/'service-worker.js').read_text()
           for icon in manifest['icons']:
               assert (site/icon['src']).is_file()
           CHECK

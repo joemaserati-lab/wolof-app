@@ -17,5 +17,7 @@
     "azioni": 95,
     "salute_emozioni": 58,
     "meteo": 32
-  }
+  },
+  "status": "historical-candidates-not-the-published-corpus",
+  "currentValidationReport": "corpus-validation-report.json"
 }

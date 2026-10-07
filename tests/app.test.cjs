@@ -3,7 +3,7 @@ function boot(saved){
  const nodes=new Map(),store={'njang-wolof-v2':JSON.stringify(saved)};
  const node=id=>{if(!nodes.has(id))nodes.set(id,{value:'',dataset:{},style:{},classList:{add(){},remove(){},toggle(){}},focus(){},setAttribute(){},innerHTML:''});return nodes.get(id);};
  const document={querySelector:node,querySelectorAll:()=>[]};
- const ctx={window:{scrollTo(){},addEventListener(){}},document,navigator:{onLine:true},location:{protocol:'file:'},localStorage:{getItem:k=>store[k]||null,setItem:(k,v)=>store[k]=v},setTimeout(){},clearTimeout(){},confirm:()=>false,console};
+ const ctx={window:{scrollTo(){},addEventListener(){}},document,navigator:{onLine:true},location:{protocol:'file:'},localStorage:{getItem:k=>store[k]||null,setItem:(k,v)=>store[k]=v},setTimeout(){},clearTimeout(){},confirm:()=>false,console,URL};
  vm.createContext(ctx);for(const file of ['data.js','learning.js','lexicon-packs.js'])vm.runInContext(fs.readFileSync(__dirname+'/../site/'+file,'utf8'),ctx);
  let app=fs.readFileSync(__dirname+'/../site/app.js','utf8');app=app.replace(" $('#hamb').onclick", " window.testAPI={buildQuestions,makeWordQ,startModule,startMixed,launch,next,check,wordById,getState:()=>S,getQuiz:()=>quiz};\n $('#hamb').onclick");vm.runInContext(app,ctx);
  return {api:ctx.window.testAPI,data:ctx.window.WOLOF_DATA,node,store};
@@ -18,7 +18,7 @@ test('legacy progress survives load and partial grading round trip',()=>{
 });
 test('all module sessions contain 10 valid questions and two unscored interludes',()=>{
  const {api,node,data}=boot(legacy);
- for(const m of data.modules){const qs=api.buildQuestions(m.id);assert.equal(qs.length,10);const ids=qs.map(q=>q.wordId).filter(Boolean);assert.equal(new Set(ids).size,ids.length);assert.ok(new Set(qs.map(q=>q.format)).size>=3);for(const q of qs){assert.ok(q.answer);assert.ok(q.prompt);assert.ok(q.wordId?api.wordById(q.wordId).category===m.id:q.category===m.id);if(q.type==='choice'){assert.equal(q.options.length,4);assert.ok(q.options.includes(q.answer));}else assert.ok(q.answers.includes(q.answer));}
+ for(const m of data.modules){const qs=api.buildQuestions(m.id);assert.equal(qs.length,10);const ids=qs.map(q=>q.wordId).filter(Boolean);assert.equal(new Set(ids).size,Math.min(10,data.lexicon.filter(w=>w.category===m.id).length));assert.ok(new Set(qs.map(q=>q.format)).size>=3);for(const q of qs){assert.ok(q.answer);assert.ok(q.prompt);assert.ok(q.wordId?api.wordById(q.wordId).category===m.id:q.category===m.id);if(q.type==='choice'){assert.equal(q.options.length,4);assert.ok(q.options.includes(q.answer));}else assert.ok(q.answers.includes(q.answer));}
  api.startModule(m.id);for(let i=1;i<=10;i++){api.next();if(i===3||i===7){assert.match(node('#view').innerHTML,new RegExp('Pausa '+(i===3?1:2)+'/2'));node('#resume').onclick();}}}
 });
 test('known different lexical answer is not a spelling near miss',()=>{
@@ -32,4 +32,9 @@ test('every expanded entry generates valid questions in every supported format',
   else assert.ok(q.answers.includes(q.answer));
   if(format==='context')assert.match(q.prompt,/____/);
  }
+});
+test('polysemous vocabulary always has a sense cue in translation questions',()=>{
+ const {api,data}=boot(legacy);
+ for(const id of ['muus-noun-cat','muus-quality-clever','w138','w186']){const w=api.wordById(id);assert.ok(w);const q=api.makeWordQ(w,0,'w2it');assert.ok(q.prompt.includes(w.senseLabel));assert.equal(q.answer,w.italian);}
+ const choices=api.buildQuestions(null);assert.ok(choices.every(q=>data.lexicon.some(w=>w.id===q.wordId)));assert.ok(choices.every(q=>q.kind!=='pattern'&&q.kind!=='dialogue'));
 });

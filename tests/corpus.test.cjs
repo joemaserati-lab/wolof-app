@@ -1,20 +1,28 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
 const L=require('../site/learning.js'),ctx={window:{}};
 for(const name of ['data.js','lexicon-packs.js'])vm.runInNewContext(fs.readFileSync(__dirname+'/../site/'+name,'utf8'),ctx);
-const original=JSON.parse(JSON.stringify(ctx.window.WOLOF_DATA)),packs=ctx.window.WOLOF_PACKS;
-const D=L.enrich(ctx.window.WOLOF_DATA,packs);
-const norm=s=>L.normalize(s);
-test('expansion adds 296 sourced entries and retains every legacy ID',()=>{
- assert.equal(original.lexicon.length,358);assert.equal(D.lexicon.length,654);
- assert.equal(packs[0].entries.length,296);
- for(const old of original.lexicon){const current=D.lexicon.find(w=>w.id===old.id);assert.ok(current);assert.equal(current.wolof,old.wolof);assert.equal(current.italian,old.italian);}
- const forms=new Set(original.lexicon.map(w=>norm(w.wolof)));
- for(const e of packs[0].entries){assert.ok(!forms.has(norm(e.wolof)),'duplicate: '+e.wolof);forms.add(norm(e.wolof));}
+const D=L.enrich(ctx.window.WOLOF_DATA,ctx.window.WOLOF_PACKS);
+const read=name=>JSON.parse(fs.readFileSync(__dirname+'/../'+name,'utf8'));
+const candidates=read('corpus-candidates.json').lexicon,ledger=read('validation-ledger.json').records;
+test('only approved institutional senses are published; quarantined IDs stay archived',()=>{
+ assert.equal(D.lexicon.length,193);assert.equal(candidates.length,654);assert.equal(read('corpus-validation-report.json').quarantined,463);
+ for(const w of D.lexicon){assert.ok(L.isValidated(w));assert.equal(ledger[w.id].status,'verified');assert.equal(ledger[w.id].binding,w.validation.binding);assert.ok(w.validation.evidence[0].sourceMeaning);}
+ for(const w of candidates){assert.ok(ledger[w.id]);if(ledger[w.id].status!=='verified')assert.ok(!D.lexicon.some(e=>e.id===w.id));else assert.equal(D.lexicon.find(e=>e.id===w.id).wolof,w.wolof);}
+ assert.equal(D.patterns.length,0);
 });
-test('new entries have exact references, editorial translations, and attested examples',()=>{
- const sourceIDs=new Set(D.sources.map(s=>s.id)),categories=new Set(D.modules.map(m=>m.id));
- for(const e of packs[0].entries){assert.ok(categories.has(e.category));assert.ok(sourceIDs.has(e.source));assert.match(e.ref,/^PDF p\. \d+$/);assert.ok(['word','phrase'].includes(e.kind));assert.ok(e.pos);assert.ok(e.meanings.length);assert.equal(e.wolof,e.wolof.normalize('NFC'));assert.equal(e.frequency,null);assert.equal(e.level,null);assert.equal(e.provenance[0].status,'source-checked');assert.match(e.provenance[0].translationReview,/not native-speaker reviewed/);
- for(const ex of e.examples){assert.ok(sourceIDs.has(ex.sourceId));assert.ok(ex.ref);assert.ok(D.lexicon.some(p=>p.wolof===ex.wolof&&p.italian===ex.italian&&p.source===ex.sourceId&&p.ref===ex.ref));}}
- for(const m of D.modules){assert.equal(m.wordCount+m.phraseCount,D.lexicon.filter(e=>e.category===m.id).length);}
+test('muus has distinct reviewed cat and astute senses; generic intelligent is quarantined',()=>{
+ const senses=D.lexicon.filter(w=>w.wolof==='muus');assert.equal(senses.length,2);
+ assert.equal(senses.find(w=>w.id==='muus-noun-cat').italian,'gatto');
+ assert.equal(senses.find(w=>w.id==='muus-quality-clever').italian,'essere astuto; essere furbo');
+ assert.ok(senses.every(w=>w.senseLabel));assert.equal(ledger['pcsn-0ae9b9843021'].status,'conflict');
+});
+test('runtime gate rejects changed meanings, examples, variants and fake sources',()=>{
+ const w=D.lexicon[0];for(const patch of [{italian:'inventato'},{meanings:['inventato']},{variants:['inventato']},{examples:[{wolof:'inventato'}]},{senseLabel:'inventato'}])assert.ok(!L.isValidated({...w,...patch}));
+ assert.ok(!L.isValidated({...w,validation:{status:'verified'}}));
+ const fake=JSON.parse(JSON.stringify(w));fake.validation.evidence[0].url='https://lgidf.cnrs.fr.fake.invalid/';assert.ok(!L.isValidated(fake));
+ const data=JSON.parse(JSON.stringify(D));data.lexicon.push({...w,id:'unreviewed-id'});assert.equal(L.enrich(data).lexicon.length,193);
+});
+test('all modules retain approved entries and all twenty legacy numbers retain IDs',()=>{
+ for(const m of D.modules){const words=D.lexicon.filter(w=>w.category===m.id);assert.ok(words.length);assert.equal(m.wordCount+m.phraseCount,words.length);}
  const numbers=D.lexicon.filter(e=>e.kind==='number');assert.equal(numbers.length,20);for(const n of numbers){assert.ok(L.formats(n).includes('typing'));assert.ok(!L.formats(n).includes('reorder'));}
 });

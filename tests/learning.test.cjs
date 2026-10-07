@@ -19,9 +19,9 @@ test('schema enriches all legacy entries without changing IDs or sources',()=>{
  assert.equal(new Set(D.lexicon.map(w=>w.id)).size,D.lexicon.length);
  for(const w of D.lexicon){assert.ok(w.lemma);assert.ok(w.meanings.length);assert.ok(w.provenance[0].sourceId);assert.ok(Array.isArray(w.examples));assert.ok(L.formats(w).length>=3);}
 });
-test('reviewed packs extend the corpus; duplicate IDs and unknown sources fail',()=>{
+test('unreviewed packs stay excluded; duplicate IDs and unknown sources fail',()=>{
  const data=()=>JSON.parse(JSON.stringify(D));const w={...D.lexicon[0],id:'pack-001'};
- assert.equal(L.enrich(data(),[{schemaVersion:1,entries:[w]}]).lexicon.length,D.lexicon.length+1);
+ assert.equal(L.enrich(data(),[{schemaVersion:1,entries:[w]}]).lexicon.length,D.lexicon.length);
  assert.throws(()=>L.enrich(data(),[{schemaVersion:1,entries:[D.lexicon[0]]}]),/duplicata/);
  assert.throws(()=>L.enrich(data(),[{schemaVersion:1,entries:[{...w,source:'missing'}]}]),/riferimenti/);
 });
